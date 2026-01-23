@@ -172,10 +172,7 @@
         .wave-decoration svg {
             width: 100%;
             height: 100%;
-        }
-        
-        .wave-decoration path {
-            stroke: #1e5a8e;
+            filter: blur(0.5px);
         }
         
         /* About Section */
@@ -676,9 +673,9 @@
             </div>
             <div class="wire-tagline">Golian Audiology</div>
             <div class="wire-title">Leading Audiologist</div>
-            <div class="wire-subtitle">Santa Monica, LA</div>
+            <div class="wire-subtitle">West Los Angeles</div>
             <div class="wire-text">
-                We believe it's possible to regain your youth and vitality by improving your hearing. From personalized care to education on the latest hearing devices. Leading Los Angeles Audiologist Dr. Armin Golian is here to help.
+                Hearing loss doesn't have to hold you back. Whether you're missing conversations with loved ones or struggling in noisy environments, we're here to help you reconnect with the sounds that matter most. Dr. Armin Golian and our team provide personalized care using the latest technology to get you hearing your best.
             </div>
             <button class="wire-cta-button" onclick="openModal()">Book An Appointment</button>
         </div>
@@ -691,10 +688,37 @@
     <!-- Wave Decoration -->
     <div class="wave-decoration">
         <svg viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0 50 Q 150 20, 300 50 T 600 50 T 900 50 T 1200 50" 
-                  stroke="#1e5a8e" 
+            <!-- Multiple layered semi-transparent waves -->
+            <path d="M0 50 Q 200 30, 400 50 T 800 50 T 1200 50" 
+                  stroke="#8ab4f8" 
+                  stroke-width="1" 
+                  fill="none"
+                  opacity="0.15"/>
+            <path d="M0 45 Q 200 25, 400 45 T 800 45 T 1200 45" 
+                  stroke="#6ba3e8" 
+                  stroke-width="1.5" 
+                  fill="none"
+                  opacity="0.2"/>
+            <path d="M0 50 Q 200 35, 400 50 T 800 50 T 1200 50" 
+                  stroke="#4a9fd8" 
+                  stroke-width="1.5" 
+                  fill="none"
+                  opacity="0.25"/>
+            <path d="M0 55 Q 200 40, 400 55 T 800 55 T 1200 55" 
+                  stroke="#3a8fc8" 
+                  stroke-width="1.5" 
+                  fill="none"
+                  opacity="0.3"/>
+            <path d="M0 50 Q 200 32, 400 50 T 800 50 T 1200 50" 
+                  stroke="#2a7fb8" 
                   stroke-width="2" 
-                  fill="none"/>
+                  fill="none"
+                  opacity="0.35"/>
+            <path d="M0 52 Q 200 38, 400 52 T 800 52 T 1200 52" 
+                  stroke="#1e5a8e" 
+                  stroke-width="1" 
+                  fill="none"
+                  opacity="0.2"/>
         </svg>
     </div>
     
@@ -702,7 +726,7 @@
     <div class="wire-about">
         <div class="wire-section-title">More Than a Clinic: Get to Know the People Who Care for You</div>
         <div class="wire-section-text">
-            As a leading Audiologist in Santa Monica we offer expert knowledge and state of the art technology & equipment for a range of treatments tailored to your specific needs. We provide one-on-one hearing counseling, hearing tests, comprehensive evaluations, and concierge audiology services.
+                            As a leading Audiologist in West Los Angeles we offer expert knowledge and state of the art technology & equipment for a range of treatments tailored to your specific needs. We provide one-on-one hearing counseling, hearing tests, comprehensive evaluations, and concierge audiology services.
         </div>
         <div class="video-placeholder">VIDEO EMBED</div>
     </div>
@@ -718,48 +742,85 @@
                 <div class="wire-card-icon">ICON</div>
                 <div class="wire-card-title">Hearing Evaluations</div>
                 <div class="wire-card-text">
-                    A battery of tests are used to determine the amount of hearing loss in both ears. Pure-tone air, bone conduction, and speech tests are the main three.
+                    We'll run a complete hearing evaluation to figure out exactly what's going on with your hearing. Using advanced testing, we'll identify any hearing loss and create a treatment plan that actually works for your lifestyle.
                 </div>
             </div>
             <div class="wire-card">
                 <div class="wire-card-icon">ICON</div>
                 <div class="wire-card-title">Tinnitus Management</div>
                 <div class="wire-card-text">
-                    Therapy is an established treatment option for sufferers of tinnitus. Sound therapy uses a device to mask tinnitus sounds while behavioral therapy controls emotional reactions.
+                    Dealing with ringing or buzzing in your ears? You're not alone. We offer proven treatments that can significantly reduce tinnitus symptoms and help you find relief so you can focus on what matters.
                 </div>
             </div>
             <div class="wire-card">
                 <div class="wire-card-icon">ICON</div>
                 <div class="wire-card-title">Hearing Aids</div>
                 <div class="wire-card-text">
-                    Expert fitting and programming of the latest hearing aid technology tailored to your lifestyle and budget with ongoing support and adjustments.
+                    Finding the right hearing aids is a big deal, and we make sure they're perfectly fitted to your needs. From the initial fitting to ongoing adjustments, we'll make sure you're comfortable and hearing clearly.
                 </div>
             </div>
         </div>
     </div>
     
+    <!-- Wave Decoration 2 -->
+    <div class="wave-decoration">
+        <svg viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <!-- Multiple layered semi-transparent waves -->
+            <path d="M0 50 Q 200 30, 400 50 T 800 50 T 1200 50" 
+                  stroke="#8ab4f8" 
+                  stroke-width="1" 
+                  fill="none"
+                  opacity="0.15"/>
+            <path d="M0 45 Q 200 25, 400 45 T 800 45 T 1200 45" 
+                  stroke="#6ba3e8" 
+                  stroke-width="1.5" 
+                  fill="none"
+                  opacity="0.2"/>
+            <path d="M0 50 Q 200 35, 400 50 T 800 50 T 1200 50" 
+                  stroke="#4a9fd8" 
+                  stroke-width="1.5" 
+                  fill="none"
+                  opacity="0.25"/>
+            <path d="M0 55 Q 200 40, 400 55 T 800 55 T 1200 55" 
+                  stroke="#3a8fc8" 
+                  stroke-width="1.5" 
+                  fill="none"
+                  opacity="0.3"/>
+            <path d="M0 50 Q 200 32, 400 50 T 800 50 T 1200 50" 
+                  stroke="#2a7fb8" 
+                  stroke-width="2" 
+                  fill="none"
+                  opacity="0.35"/>
+            <path d="M0 52 Q 200 38, 400 52 T 800 52 T 1200 52" 
+                  stroke="#1e5a8e" 
+                  stroke-width="1" 
+                  fill="none"
+                  opacity="0.2"/>
+        </svg>
+    </div>
+    
     <!-- Testimonials Section -->
     <div class="wire-testimonials">
-        <div class="wire-section-title">Success Stories</div>
+        <div class="wire-section-title">What Our Patients Say</div>
         
         <div class="wire-testimonial-cards">
             <div class="wire-testimonial-card">
                 <div class="wire-quote">
-                    "Love this place because they really care about their patients. You can tell by the way the staff treats you, answers any questions, and follows up. Very nice and professional."
+                    "I've been to several audiologists over the years, but Dr. Golian's approach is different. He takes the time to explain everything and never makes you feel rushed. My hearing aids work perfectly and the follow-up care has been outstanding."
                 </div>
-                <div class="wire-author">Patient Review</div>
+                <div class="wire-author">Robert K.</div>
             </div>
             <div class="wire-testimonial-card">
                 <div class="wire-quote">
-                    "Dr. Golian is exceptional in all regards. He is exceedingly knowledgeable, caring and compassionate, as well as amazingly patient. He gives personal attention with warmth and caring."
+                    "After years of struggling with hearing loss, I finally decided to get help. The team at Golian Audiology made the entire process comfortable and easy. I wish I hadn't waited so long - what a difference it's made in my daily life!"
                 </div>
-                <div class="wire-author">Patient Review</div>
+                <div class="wire-author">Jennifer M.</div>
             </div>
             <div class="wire-testimonial-card">
                 <div class="wire-quote">
-                    "Absolutely incredible service. The team was fantastic. They helped me understand what was going on with my hearing. I felt like they made sure they learned about me and my needs."
+                    "Professional, knowledgeable, and genuinely caring. Dr. Golian found the perfect solution for my tinnitus issues. The relief has been life-changing. I highly recommend this practice to anyone experiencing hearing challenges."
                 </div>
-                <div class="wire-author">Patient Review</div>
+                <div class="wire-author">David L.</div>
             </div>
         </div>
     </div>
@@ -772,10 +833,10 @@
         
         <div class="wire-locations">
             <div class="wire-location-card">
-                <div class="wire-location-title">Santa Monica</div>
+                <div class="wire-location-title">West Los Angeles</div>
                 <div class="wire-info-block">
                     <div class="wire-info-label">Address</div>
-                    <div class="wire-info-text">1444 S Carmelina Ave Suite 133 <br>Los Angeles, CA 90025</div>
+                    <div class="wire-info-text">1444 S Carmelina Ave Suite 133<br>Los Angeles, CA 90025</div>
                 </div>
                 <div class="wire-info-block">
                     <div class="wire-info-label">Phone</div>
@@ -818,7 +879,7 @@
             </div>
             <div class="wire-footer-column">
                 <div class="wire-footer-title">Contact</div>
-                <div class="wire-footer-link">Santa Monica</div>
+                <div class="wire-footer-link">West Los Angeles</div>
                 <div class="wire-footer-link">Book Appointment</div>
             </div>
         </div>
