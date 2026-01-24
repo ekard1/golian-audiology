@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Golian Audiology</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: white;
+        }
+        
+        /* Navigation */
+        .wire-nav {
+            background: #fff;
+            padding: 25px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .wire-logo {
+            font-size: 20px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .wire-menu {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .wire-menu-item {
+            font-size: 14px;
+            color: #666;
+            font-weight: 400;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .wire-menu-item:hover {
+            color: #1e5a8e;
+        }
+        
+        .wire-cta-button {
+            padding: 12px 28px;
+            background: white;
+            color: #1e5a8e;
+            border: 2px solid #1e5a8e;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Page Hero */
+        .page-hero {
+            padding: 100px 60px 60px;
+            background: white;
+            text-align: center;
+        }
+        
+        .page-title {
+            font-size: 52px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .page-subtitle {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        /* Wave Decoration */
+        .wave-decoration {
+            width: 100%;
+            height: 100px;
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .wave-decoration svg {
+            width: 100%;
+            height: 100%;
+            filter: blur(0.5px);
+        }
+        
+        /* Services Grid */
+        .services-section {
+            padding: 80px 60px;
+            background: white;
+        }
+        
+        .service-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 100px;
+            align-items: center;
+        }
+        
+        .service-item:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .service-item:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .service-content h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        .service-content p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .service-content ul {
+            list-style: none;
+            margin-top: 25px;
+        }
+        
+        .service-content li {
+            font-size: 15px;
+            color: #666;
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .service-content li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #1e5a8e;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 400px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 60px;
+            background: white;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .cta-text {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button-large {
+            padding: 16px 45px;
+            background: white;
+            color: #1e5a8e;
+            border: 2px solid #1e5a8e;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+        
+        /* Footer */
+        .wire-footer {
+            background: white;
+            color: #666;
+            padding: 60px 60px 30px;
+            position: relative;
+        }
+        
+        .wire-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e0e0e0;
+        }
+        
+        .wire-footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .wire-footer-column {
+            text-align: left;
+        }
+        
+        .wire-footer-title {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .wire-footer-link {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        
+        .wire-footer-bottom {
+            padding-top: 30px;
+            text-align: center;
+        }
+        
+        .wire-social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .wire-social-icon {
+            width: 35px;
+            height: 35px;
+            background: #f0f0f0;
+            border-radius: 50%;
+        }
+        
+        .wire-copyright {
+            font-size: 12px;
+            color: #999;
+        }
+        
+        /* Contact Form Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            animation: slideDown 0.3s;
+            max-height: 90vh;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 28px;
+            font-weight: 300;
+            color: #999;
+            cursor: pointer;
+            line-height: 1;
+        }
+        
+        .close-modal:hover {
+            color: #333;
+        }
+        
+        .form-title {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+        
+        .form-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: #1e5a8e;
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 15px;
+            background: #1e5a8e;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .form-submit:hover {
+            background: #164a73;
+        }
+        
+        @media (max-width: 768px) {
+            .wire-nav {
+                padding: 20px 30px;
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .wire-menu {
+                position: static;
+                transform: none;
+            }
+            
+            .page-hero {
+                padding: 60px 30px 40px;
+            }
+            
+            .page-title {
+                font-size: 36px;
+            }
+            
+            .services-section {
+                padding: 60px 30px;
+            }
+            
+            .service-item {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-bottom: 60px;
+            }
+            
+            .service-item:nth-child(even) {
+                direction: ltr;
+            }
+            
+            .service-content h2 {
+                font-size: 28px;
+            }
+            
+            .wire-footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal {
+                padding: 0;
+            }
+            
+            .modal-content {
+                margin: 0;
+                padding: 30px 20px;
+                width: 100%;
+                max-width: 100%;
+                min-height: 100vh;
+                border-radius: 0;
+                position: relative;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="wire-nav">
+        <a href="index.html" class="wire-logo">Golian Audiology</a>
+        <div class="wire-menu">
+            <a href="index.html" class="wire-menu-item">Home</a>
+            <a href="#" class="wire-menu-item">About Us</a>
+            <a href="services.html" class="wire-menu-item">Services</a>
+            <a href="#" class="wire-menu-item">Our Clinics</a>
+        </div>
+        <button class="wire-cta-button" onclick="openModal()">Book Appointment</button>
+    </div>
+    
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <h1 class="page-title">Our Services</h1>
+        <p class="page-subtitle">
+            Comprehensive hearing care designed around you. From initial evaluations to ongoing support, 
+            we're here to help you hear better and live better.
+        </p>
+    </div>
+    
+    <!-- Wave Decoration -->
+    <div class="wave-decoration">
+        <svg viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 50 Q 200 30, 400 50 T 800 50 T 1200 50" 
+                  stroke="#8ab4f8" 
+                  stroke-width="1" 
+                  fill="none"
+                  opacity="0.15"/>
+            <path d="M0 45 Q 200 25, 400 45 T 800 45 T 1200 45" 
+                  stroke="#6ba3e8" 
+                  stroke-width="1.5" 
+                  fill="none"
+                  opacity="0.2"/>
+            <path d="M0 50 Q 200 35, 400 50 T 800 50 T 1200 50" 
+                  stroke="#4a9fd8" 
+                  stroke-width="1.5" 
+                  fill="none"
+                  opacity="0.25"/>
+            <path d="M0 55 Q 200 40, 400 55 T 800 55 T 1200 55" 
+                  stroke="#3a8fc8" 
+                  stroke-width="1.5" 
+                  fill="none"
+                  opacity="0.3"/>
+            <path d="M0 50 Q 200 32, 400 50 T 800 50 T 1200 50" 
+                  stroke="#2a7fb8" 
+                  stroke-width="2" 
+                  fill="none"
+                  opacity="0.35"/>
+            <path d="M0 52 Q 200 38, 400 52 T 800 52 T 1200 52" 
+                  stroke="#1e5a8e" 
+                  stroke-width="1" 
+                  fill="none"
+                  opacity="0.2"/>
+        </svg>
+    </div>
+    
+    <!-- Services Section -->
+    <div class="services-section">
+        <!-- Service 1 -->
+        <div class="service-item">
+            <div class="service-content">
+                <h2>Comprehensive Hearing Evaluations</h2>
+                <p>
+                    Not sure if you have hearing loss? We'll get to the bottom of it. Our thorough evaluations 
+                    use the latest diagnostic technology to assess your hearing and identify any issues.
+                </p>
+                <p>
+                    We take the time to understand your unique situation and create a clear path forward. 
+                    No rushing, no pressure—just honest answers and practical solutions.
+                </p>
+                <ul>
+                    <li>Complete hearing assessment</li>
+                    <li>Advanced diagnostic testing</li>
+                    <li>Personalized treatment recommendations</li>
+                    <li>Insurance-friendly options</li>
+                </ul>
+            </div>
+            <div class="service-image">
+                SERVICE IMAGE 1
+            </div>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="service-item">
+            <div class="service-content">
+                <h2>Tinnitus Evaluation & Treatment</h2>
+                <p>
+                    That constant ringing, buzzing, or humming can be incredibly frustrating. We get it. 
+                    Tinnitus affects millions, and while there's no magic cure, there are real solutions 
+                    that can bring significant relief.
+                </p>
+                <p>
+                    We'll identify what's causing your tinnitus and develop a customized treatment plan 
+                    using proven therapies that help you manage symptoms and regain your peace of mind.
+                </p>
+                <ul>
+                    <li>Detailed tinnitus assessment</li>
+                    <li>Sound therapy options</li>
+                    <li>Lifestyle modification guidance</li>
+                    <li>Ongoing support and adjustments</li>
+                </ul>
+            </div>
+            <div class="service-image">
+                SERVICE IMAGE 2
+            </div>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="service-item">
+            <div class="service-content">
+                <h2>Hearing Aid Fitting & Programming</h2>
+                <p>
+                    Finding the right hearing aids is about more than just picking a device off the shelf. 
+                    We match you with technology that fits your lifestyle, budget, and specific hearing needs.
+                </p>
+                <p>
+                    From the initial fitting to fine-tuning and follow-up care, we make sure your hearing 
+                    aids work perfectly. And if something needs adjusting? We're always here to help.
+                </p>
+                <ul>
+                    <li>Personalized device selection</li>
+                    <li>Custom fitting and programming</li>
+                    <li>Bluetooth and smartphone integration</li>
+                    <li>Unlimited follow-up adjustments</li>
+                </ul>
+            </div>
+            <div class="service-image">
+                SERVICE IMAGE 3
+            </div>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="service-item">
+            <div class="service-content">
+                <h2>Hearing Aid Repairs & Maintenance</h2>
+                <p>
+                    Hearing aids are sophisticated devices, and sometimes they need a little TLC. Whether 
+                    it's routine maintenance or an unexpected issue, we've got you covered.
+                </p>
+                <p>
+                    We offer quick repairs, thorough cleanings, and preventive care to keep your devices 
+                    running smoothly. Most repairs can be done right here in our office.
+                </p>
+                <ul>
+                    <li>In-office repairs and cleaning</li>
+                    <li>Manufacturer warranty service</li>
+                    <li>Battery replacement and accessories</li>
+                    <li>Regular maintenance check-ups</li>
+                </ul>
+            </div>
+            <div class="service-image">
+                SERVICE IMAGE 4
+            </div>
+        </div>
+        
+        <!-- Service 5 -->
+        <div class="service-item">
+            <div class="service-content">
+                <h2>Custom Hearing Protection</h2>
+                <p>
+                    Prevention is key. Whether you work in loud environments, attend concerts, or enjoy 
+                    shooting sports, protecting your hearing now can save you from problems down the road.
+                </p>
+                <p>
+                    We create custom-fitted earplugs that provide superior protection while still letting 
+                    you hear what you need to. Comfortable, effective, and built to last.
+                </p>
+                <ul>
+                    <li>Custom-molded ear protection</li>
+                    <li>Musician's earplugs</li>
+                    <li>Industrial hearing protection</li>
+                    <li>Swimming and water sports plugs</li>
+                </ul>
+            </div>
+            <div class="service-image">
+                SERVICE IMAGE 5
+            </div>
+        </div>
+    </div>
+    
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <h2 class="cta-title">Ready to Take the Next Step?</h2>
+        <p class="cta-text">Schedule your appointment today and start your journey to better hearing.</p>
+        <button class="cta-button-large" onclick="openModal()">Book An Appointment</button>
+    </div>
+    
+    <!-- Footer -->
+    <div class="wire-footer">
+        <div class="wire-footer-content">
+            <div class="wire-footer-column">
+                <div class="wire-footer-title">Quick Links</div>
+                <div class="wire-footer-link">Home</div>
+                <div class="wire-footer-link">About Us</div>
+                <div class="wire-footer-link">Services</div>
+                <div class="wire-footer-link">Blog</div>
+            </div>
+            <div class="wire-footer-column">
+                <div class="wire-footer-title">Services</div>
+                <div class="wire-footer-link">Hearing Evaluations</div>
+                <div class="wire-footer-link">Tinnitus Treatment</div>
+                <div class="wire-footer-link">Hearing Aids</div>
+                <div class="wire-footer-link">Hearing Protection</div>
+            </div>
+            <div class="wire-footer-column">
+                <div class="wire-footer-title">Contact</div>
+                <div class="wire-footer-link">West Los Angeles</div>
+                <div class="wire-footer-link">Book Appointment</div>
+            </div>
+        </div>
+        
+        <div class="wire-footer-bottom">
+            <div class="wire-social-icons">
+                <div class="wire-social-icon"></div>
+                <div class="wire-social-icon"></div>
+                <div class="wire-social-icon"></div>
+            </div>
+            <div class="wire-copyright">© 2024 Golian Audiology. All rights reserved.</div>
+        </div>
+    </div>
+    
+    <!-- Contact Form Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 class="form-title">Book An Appointment</h2>
+            <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
+            
+            <form id="appointmentForm" onsubmit="handleSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">First Name *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Email *</label>
+                        <input type="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone *</label>
+                        <input type="tel" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Preferred Date</label>
+                        <input type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Preferred Time</label>
+                        <select class="form-select">
+                            <option value="">Select a time</option>
+                            <option value="morning">Morning (8am-12pm)</option>
+                            <option value="afternoon">Afternoon (12pm-5pm)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-textarea" placeholder="Tell us about your hearing concerns or any questions you have..."></textarea>
+                </div>
+                
+                <button type="submit" class="form-submit">Submit Appointment Request</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        function openModal() {
+            document.getElementById('contactModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.getElementById('contactModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+        
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Form submitted! In the real site, this will send an email to your practice.');
+            closeModal();
+        }
+    </script>
+</body>
+</html>
