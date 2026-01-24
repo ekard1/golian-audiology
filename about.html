@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Golian Audiology</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: white;
+        }
+        
+        /* Navigation */
+        .wire-nav {
+            background: #fff;
+            padding: 25px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .wire-logo {
+            font-size: 20px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .wire-menu {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .wire-menu-item {
+            font-size: 14px;
+            color: #666;
+            font-weight: 400;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .wire-menu-item:hover {
+            color: #1e5a8e;
+        }
+        
+        .wire-cta-button {
+            padding: 12px 28px;
+            background: white;
+            color: #1e5a8e;
+            border: 2px solid #1e5a8e;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Page Hero */
+        .page-hero {
+            padding: 100px 60px 60px;
+            background: white;
+            text-align: center;
+        }
+        
+        .page-title {
+            font-size: 52px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .page-subtitle {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        /* Wave Decoration */
+        .wave-decoration {
+            width: 100%;
+            height: 100px;
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .wave-decoration svg {
+            width: 100%;
+            height: 100%;
+            filter: blur(0.5px);
+        }
+        
+        /* Doctor Profile Section */
+        .doctor-profile {
+            padding: 80px 60px;
+            background: white;
+        }
+        
+        .profile-container {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start;
+        }
+        
+        .doctor-image-container {
+            position: sticky;
+            top: 40px;
+        }
+        
+        .doctor-image {
+            width: 100%;
+            height: 500px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .doctor-name {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+        
+        .doctor-title {
+            font-size: 16px;
+            color: #1e5a8e;
+            font-weight: 500;
+        }
+        
+        .doctor-bio h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+        
+        .doctor-bio p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .credentials {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .credentials h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .credential-item {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .credential-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #1e5a8e;
+            font-size: 24px;
+            line-height: 1;
+        }
+        
+        .credential-degree {
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+            display: block;
+        }
+        
+        .credential-school {
+            font-size: 15px;
+            color: #666;
+            display: block;
+            margin-top: 3px;
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            padding: 80px 60px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+        
+        .mission-title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .mission-text {
+            font-size: 18px;
+            color: #666;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* Values Section */
+        .values-section {
+            padding: 80px 60px;
+            background: white;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 300;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .value-item {
+            text-align: center;
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: #f5f5f5;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e5a8e;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        .value-title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .value-text {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 60px;
+            background: white;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .cta-text {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button-large {
+            padding: 16px 45px;
+            background: white;
+            color: #1e5a8e;
+            border: 2px solid #1e5a8e;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+        
+        /* Footer */
+        .wire-footer {
+            background: white;
+            color: #666;
+            padding: 60px 60px 30px;
+            position: relative;
+        }
+        
+        .wire-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e0e0e0;
+        }
+        
+        .wire-footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .wire-footer-column {
+            text-align: left;
+        }
+        
+        .wire-footer-title {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .wire-footer-link {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        
+        .wire-footer-bottom {
+            padding-top: 30px;
+            text-align: center;
+        }
+        
+        .wire-social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .wire-social-icon {
+            width: 35px;
+            height: 35px;
+            background: #f0f0f0;
+            border-radius: 50%;
+        }
+        
+        .wire-copyright {
+            font-size: 12px;
+            color: #999;
+        }
+        
+        /* Contact Form Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            animation: slideDown 0.3s;
+            max-height: 90vh;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 28px;
+            font-weight: 300;
+            color: #999;
+            cursor: pointer;
+            line-height: 1;
+        }
+        
+        .close-modal:hover {
+            color: #333;
+        }
+        
+        .form-title {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+        
+        .form-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: #1e5a8e;
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 15px;
+            background: #1e5a8e;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .form-submit:hover {
+            background: #164a73;
+        }
+        
+        @media (max-width: 768px) {
+            .wire-nav {
+                padding: 20px 30px;
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .wire-menu {
+                position: static;
+                transform: none;
+            }
+            
+            .page-hero {
+                padding: 60px 30px 40px;
+            }
+            
+            .page-title {
+                font-size: 36px;
+            }
+            
+            .doctor-profile {
+                padding: 60px 30px;
+            }
+            
+            .profile-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .doctor-image-container {
+                position: static;
+            }
+            
+            .doctor-image {
+                height: 400px;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .wire-footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal {
+                padding: 0;
+            }
+            
+            .modal-content {
+                margin: 0;
+                padding: 30px 20px;
+                width: 100%;
+                max-width: 100%;
+                min-height: 100vh;
+                border-radius: 0;
+                position: relative;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="wire-nav">
+        <a href="index.html" class="wire-logo">Golian Audiology</a>
+        <div class="wire-menu">
+            <a href="index.html" class="wire-menu-item">Home</a>
+            <a href="about.html" class="wire-menu-item">About Us</a>
+            <a href="services.html" class="wire-menu-item">Services</a>
+            <a href="#" class="wire-menu-item">Our Clinics</a>
+        </div>
+        <button class="wire-cta-button" onclick="openModal()">Book Appointment</button>
+    </div>
+    
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <h1 class="page-title">About Us</h1>
+        <p class="page-subtitle">
+            Dedicated to helping you hear better and live better. Meet the team committed to your hearing health.
+        </p>
+    </div>
+    
+    <!-- Wave Decoration -->
+    <div class="wave-decoration">
+        <svg viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 50 Q 200 30, 400 50 T 800 50 T 1200 50" 
+                  stroke="#8ab4f8" 
+                  stroke-width="1" 
+                  fill="none"
+                  opacity="0.15"/>
+            <path d="M0 45 Q 200 25, 400 45 T 800 45 T 1200 45" 
+                  stroke="#6ba3e8" 
+                  stroke-width="1.5" 
+                  fill="none"
+                  opacity="0.2"/>
+            <path d="M0 50 Q 200 35, 400 50 T 800 50 T 1200 50" 
+                  stroke="#4a9fd8" 
+                  stroke-width="1.5" 
+                  fill="none"
+                  opacity="0.25"/>
+            <path d="M0 55 Q 200 40, 400 55 T 800 55 T 1200 55" 
+                  stroke="#3a8fc8" 
+                  stroke-width="1.5" 
+                  fill="none"
+                  opacity="0.3"/>
+            <path d="M0 50 Q 200 32, 400 50 T 800 50 T 1200 50" 
+                  stroke="#2a7fb8" 
+                  stroke-width="2" 
+                  fill="none"
+                  opacity="0.35"/>
+            <path d="M0 52 Q 200 38, 400 52 T 800 52 T 1200 52" 
+                  stroke="#1e5a8e" 
+                  stroke-width="1" 
+                  fill="none"
+                  opacity="0.2"/>
+        </svg>
+    </div>
+    
+    <!-- Doctor Profile Section -->
+    <div class="doctor-profile">
+        <div class="profile-container">
+            <div class="doctor-image-container">
+                <div class="doctor-image">DR. GOLIAN PHOTO</div>
+                <div class="doctor-name">Dr. Armin Golian</div>
+                <div class="doctor-title">Doctor of Audiology</div>
+            </div>
+            
+            <div class="doctor-bio">
+                <h2>Meet Dr. Armin Golian</h2>
+                
+                <p>
+                    Dr. Armin Golian brings a passion for helping people reconnect with the sounds that matter most. 
+                    With years of experience in audiology and a deep commitment to patient care, Dr. Golian has built 
+                    a practice focused on personalized treatment and cutting-edge technology.
+                </p>
+                
+                <p>
+                    What sets Dr. Golian apart is his ability to really listen. He takes the time to understand each 
+                    patient's unique challenges and lifestyle needs, creating treatment plans that actually work in the 
+                    real world. Whether you're dealing with hearing loss, tinnitus, or just want to protect your hearing, 
+                    Dr. Golian is here to guide you every step of the way.
+                </p>
+                
+                <p>
+                    His approach combines clinical expertise with genuine care. Patients appreciate his straightforward 
+                    explanations, patience in answering questions, and commitment to finding solutions that fit both 
+                    their hearing needs and their budget.
+                </p>
+                
+                <div class="credentials">
+                    <h3>Education & Credentials</h3>
+                    <div class="credential-item">
+                        <span class="credential-degree">Doctor of Audiology (Au.D.)</span>
+                        <span class="credential-school">Salus University</span>
+                    </div>
+                    <div class="credential-item">
+                        <span class="credential-degree">Bachelor of Science in Speech Pathology</span>
+                        <span class="credential-school">California State University, Northridge</span>
+                    </div>
+                </div>
+                
+                <p>
+                    Beyond his clinical work, Dr. Golian stays current with the latest advances in hearing technology 
+                    and treatment methods. He believes that education is just as important as treatment—empowering 
+                    patients to make informed decisions about their hearing health.
+                </p>
+                
+                <p>
+                    When he's not in the office, Dr. Golian enjoys spending time with family and staying active in 
+                    the West Los Angeles community. He's proud to serve the area and help people rediscover the joy 
+                    of clear, effortless hearing.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mission Section -->
+    <div class="mission-section">
+        <h2 class="mission-title">Our Mission</h2>
+        <p class="mission-text">
+            At Golian Audiology, we believe everyone deserves to hear clearly and live fully. Our mission is to 
+            provide exceptional, personalized hearing care using the latest technology and a patient-first approach. 
+            We're not just treating hearing loss—we're helping people reconnect with their loved ones, enjoy their 
+            favorite activities, and engage with the world around them.
+        </p>
+    </div>
+    
+    <!-- Values Section -->
+    <div class="values-section">
+        <h2 class="section-title">What We Stand For</h2>
+        <div class="values-grid">
+            <div class="value-item">
+                <div class="value-icon">1</div>
+                <h3 class="value-title">Personalized Care</h3>
+                <p class="value-text">
+                    No two patients are the same. We take the time to understand your unique needs and create 
+                    treatment plans that work for your lifestyle.
+                </p>
+            </div>
+            
+            <div class="value-item">
+                <div class="value-icon">2</div>
+                <h3 class="value-title">Honest Guidance</h3>
+                <p class="value-text">
+                    We'll always give you straightforward advice and recommendations. No pressure, no sales tactics—
+                    just honest guidance to help you make the best decision.
+                </p>
+            </div>
+            
+            <div class="value-item">
+                <div class="value-icon">3</div>
+                <h3 class="value-title">Ongoing Support</h3>
+                <p class="value-text">
+                    Our relationship doesn't end after your first visit. We're here for follow-ups, adjustments, 
+                    and support whenever you need it.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <h2 class="cta-title">Ready to Start Your Journey?</h2>
+        <p class="cta-text">Schedule an appointment with Dr. Golian and take the first step toward better hearing.</p>
+        <button class="cta-button-large" onclick="openModal()">Book An Appointment</button>
+    </div>
+    
+    <!-- Footer -->
+    <div class="wire-footer">
+        <div class="wire-footer-content">
+            <div class="wire-footer-column">
+                <div class="wire-footer-title">Quick Links</div>
+                <div class="wire-footer-link">Home</div>
+                <div class="wire-footer-link">About Us</div>
+                <div class="wire-footer-link">Services</div>
+                <div class="wire-footer-link">Blog</div>
+            </div>
+            <div class="wire-footer-column">
+                <div class="wire-footer-title">Services</div>
+                <div class="wire-footer-link">Hearing Evaluations</div>
+                <div class="wire-footer-link">Tinnitus Treatment</div>
+                <div class="wire-footer-link">Hearing Aids</div>
+                <div class="wire-footer-link">Hearing Protection</div>
+            </div>
+            <div class="wire-footer-column">
+                <div class="wire-footer-title">Contact</div>
+                <div class="wire-footer-link">West Los Angeles</div>
+                <div class="wire-footer-link">Book Appointment</div>
+            </div>
+        </div>
+        
+        <div class="wire-footer-bottom">
+            <div class="wire-social-icons">
+                <div class="wire-social-icon"></div>
+                <div class="wire-social-icon"></div>
+                <div class="wire-social-icon"></div>
+            </div>
+            <div class="wire-copyright">© 2024 Golian Audiology. All rights reserved.</div>
+        </div>
+    </div>
+    
+    <!-- Contact Form Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 class="form-title">Book An Appointment</h2>
+            <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
+            
+            <form id="appointmentForm" onsubmit="handleSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">First Name *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Email *</label>
+                        <input type="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone *</label>
+                        <input type="tel" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Preferred Date</label>
+                        <input type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Preferred Time</label>
+                        <select class="form-select">
+                            <option value="">Select a time</option>
+                            <option value="morning">Morning (8am-12pm)</option>
+                            <option value="afternoon">Afternoon (12pm-5pm)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-textarea" placeholder="Tell us about your hearing concerns or any questions you have..."></textarea>
+                </div>
+                
+                <button type="submit" class="form-submit">Submit Appointment Request</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        function openModal() {
+            document.getElementById('contactModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.getElementById('contactModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+        
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Form submitted! In the real site, this will send an email to your practice.');
+            closeModal();
+        }
+    </script>
+</body>
+</html>
