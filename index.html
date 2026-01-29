@@ -427,6 +427,82 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
+        /* Google Review Section */
+        .review-section {
+            padding: 80px 60px;
+            background: white;
+            text-align: center;
+        }
+        
+        .review-header {
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .review-title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        
+        .review-text {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .google-reviews-embed {
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .review-button {
+            display: inline-block;
+            padding: 14px 35px;
+            background: #4285f4;
+            color: white;
+            border: 2px solid #4285f4;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin: 0 10px;
+        }
+        
+        .review-button:hover {
+            background: #3367d6;
+            border-color: #3367d6;
+        }
+        
+        .review-link-button {
+            display: inline-block;
+            padding: 14px 35px;
+            background: white;
+            color: #4285f4;
+            border: 2px solid #4285f4;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin: 0 10px;
+        }
+        
+        .review-link-button:hover {
+            background: #f0f7ff;
+        }
+        
         /* CTA Section */
         .wire-cta-section {
             padding: 100px 60px;
@@ -521,6 +597,91 @@
         .wire-copyright {
             font-size: 12px;
             color: #999;
+        }
+        
+        /* Cookie Consent Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 20px 30px;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 9999;
+            display: none;
+            animation: slideUp 0.4s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        
+        .cookie-banner.show {
+            display: block;
+        }
+        
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .cookie-text {
+            flex: 1;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .cookie-text a {
+            color: #1e5a8e;
+            text-decoration: underline;
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            gap: 15px;
+            flex-shrink: 0;
+        }
+        
+        .cookie-btn {
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            transition: all 0.3s;
+        }
+        
+        .cookie-accept {
+            background: #1e5a8e;
+            color: white;
+        }
+        
+        .cookie-accept:hover {
+            background: #164a73;
+        }
+        
+        .cookie-decline {
+            background: white;
+            color: #666;
+            border: 2px solid #ddd;
+        }
+        
+        .cookie-decline:hover {
+            border-color: #999;
         }
         
         /* Contact Form Modal */
@@ -707,7 +868,8 @@
             .wire-about,
             .wire-testimonials,
             .wire-locations-section,
-            .contact-location-section {
+            .contact-location-section,
+            .review-section {
                 padding: 60px 30px;
             }
             
@@ -723,7 +885,9 @@
 <body>
     <!-- Navigation -->
     <div class="wire-nav">
-        <a href="index.html" class="wire-logo">Golian Audiology</a>
+        <a href="index.html" class="wire-logo">
+            <img src="images/logo.png" alt="Golian Audiology Logo" style="height: 40px; width: auto;">
+        </a>
         <div class="wire-menu">
             <a href="index.html" class="wire-menu-item">Home</a>
             <a href="about.html" class="wire-menu-item">About Us</a>
@@ -930,6 +1094,39 @@
         </div>
     </div>
     
+    <!-- Google Reviews Section -->
+    <div class="review-section">
+        <div class="review-header">
+            <h2 class="review-title">What Our Patients Are Saying</h2>
+            <p class="review-text">See our reviews on Google</p>
+        </div>
+        <div class="google-reviews-embed">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d826.5056972558033!2d-118.46734997076795!3d34.04272449999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbca9d14188b%3A0x74ff8ff9d6aa2315!2sGolian%20Audiology!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                width="100%" 
+                height="450" 
+                style="border:0; border-radius: 8px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <div style="margin-top: 30px;">
+            <a href="https://www.google.com/search?q=golian+audiology&rlz=1C1RXMK_enUS1039US1039&oq=golian+audiology+&gs_lcrp=EgZjaHJvbWUyDAgAEEUYORiABBiiBDIKCAEQABiABBiiBDIKCAIQABiABBiiBDIKCAMQABiiBBiJBTIKCAQQABiiBBiJBTIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDYxMjdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x80c2bbca9d14188b:0x74ff8ff9d6aa2315,1,,,," 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="review-link-button">
+                View All Reviews on Google
+            </a>
+            <a href="https://www.google.com/search?q=golian+audiology&rlz=1C1RXMK_enUS1039US1039&oq=golian+audiology+&gs_lcrp=EgZjaHJvbWUyDAgAEEUYORiABBiiBDIKCAEQABiABBiiBDIKCAIQABiABBiiBDIKCAMQABiiBBiJBTIKCAQQABiiBBiJBTIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDYxMjdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x80c2bbca9d14188b:0x74ff8ff9d6aa2315,3,,,," 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="review-button">
+                Leave a Review
+            </a>
+        </div>
+    </div>
+    
     <!-- CTA Section -->
     <div class="wire-cta-section">
         <div class="wire-cta-title">Ready to talk?</div>
@@ -941,22 +1138,20 @@
         <div class="wire-footer-content">
             <div class="wire-footer-column">
                 <div class="wire-footer-title">Quick Links</div>
-                <div class="wire-footer-link">Home</div>
-                <div class="wire-footer-link">About Us</div>
-                <div class="wire-footer-link">Services</div>
-                <div class="wire-footer-link">Blog</div>
+                <a href="index.html" class="wire-footer-link">Home</a>
+                <a href="about.html" class="wire-footer-link">About Us</a>
+                <a href="services.html" class="wire-footer-link">Services</a>
             </div>
             <div class="wire-footer-column">
                 <div class="wire-footer-title">Services</div>
-                <div class="wire-footer-link">Hearing Evaluations</div>
-                <div class="wire-footer-link">Tinnitus Treatment</div>
-                <div class="wire-footer-link">Hearing Aids</div>
-                <div class="wire-footer-link">Hearing Protection</div>
+                <a href="services.html" class="wire-footer-link">Hearing Evaluations</a>
+                <a href="services.html" class="wire-footer-link">Tinnitus Treatment</a>
+                <a href="services.html" class="wire-footer-link">Hearing Aids</a>
             </div>
             <div class="wire-footer-column">
-                <div class="wire-footer-title">Contact</div>
-                <div class="wire-footer-link">West Los Angeles</div>
-                <div class="wire-footer-link">Book Appointment</div>
+                <div class="wire-footer-title">Legal</div>
+                <a href="privacy-policy.html" class="wire-footer-link">Privacy Policy</a>
+                <a href="terms-of-service.html" class="wire-footer-link">Terms of Service</a>
             </div>
         </div>
         
@@ -966,7 +1161,7 @@
                 <div class="wire-social-icon"></div>
                 <div class="wire-social-icon"></div>
             </div>
-            <div class="wire-copyright">© 2024 Golian Audiology. All rights reserved.</div>
+            <div class="wire-copyright">© 2025 Golian Audiology. All rights reserved.</div>
         </div>
     </div>
     
@@ -977,51 +1172,52 @@
             <h2 class="form-title">Book An Appointment</h2>
             <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
             
-            <form id="appointmentForm" onsubmit="handleSubmit(event)">
+            <form id="appointmentForm" name="appointment" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <!-- Netlify form identifier -->
+                <input type="hidden" name="form-name" value="appointment">
+                
+                <!-- Honeypot field for spam protection (hidden from users) -->
+                <p style="display:none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+                
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label">First Name *</label>
-                        <input type="text" class="form-input" required>
+                        <input type="text" name="firstName" class="form-input" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Last Name *</label>
-                        <input type="text" class="form-input" required>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label">Email *</label>
-                        <input type="email" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Phone *</label>
-                        <input type="tel" class="form-input" required>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label">Preferred Date</label>
-                        <input type="date" class="form-input">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Preferred Time</label>
-                        <select class="form-select">
-                            <option value="">Select a time</option>
-                            <option value="morning">Morning (8am-12pm)</option>
-                            <option value="afternoon">Afternoon (12pm-5pm)</option>
-                        </select>
+                        <input type="text" name="lastName" class="form-input" required>
                     </div>
                 </div>
                 
                 <div class="form-group">
+                    <label class="form-label">Phone *</label>
+                    <input type="tel" name="phone" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
                     <label class="form-label">Message</label>
-                    <textarea class="form-textarea" placeholder="Tell us about your hearing concerns or any questions you have..."></textarea>
+                    <textarea name="message" class="form-textarea" placeholder="Tell us about your hearing concerns or any questions you have..."></textarea>
                 </div>
                 
                 <button type="submit" class="form-submit">Submit Appointment Request</button>
             </form>
+        </div>
+    </div>
+    
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                We use cookies to enhance your experience on our website. By continuing to browse, you agree to our use of cookies. 
+                Learn more in our <a href="privacy-policy.html">Privacy Policy</a>.
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+                <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+            </div>
         </div>
     </div>
     
@@ -1045,9 +1241,54 @@
         
         function handleSubmit(event) {
             event.preventDefault();
-            alert('Form submitted! In the real site, this will send an email to your practice.');
-            closeModal();
+            const form = event.target;
+            const formData = new FormData(form);
+            const submitBtn = form.querySelector('.form-submit');
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Submit to Netlify
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                alert('Thank you! Your appointment request has been submitted. We will contact you within 24 hours.');
+                closeModal();
+                form.reset();
+                submitBtn.textContent = 'Submit Appointment Request';
+                submitBtn.disabled = false;
+            })
+            .catch((error) => {
+                alert('Oops! There was a problem. Please call us at (310) 666-1401.');
+                submitBtn.textContent = 'Submit Appointment Request';
+                submitBtn.disabled = false;
+            });
         }
+        
+        // Cookie Consent Functions
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                document.getElementById('cookieBanner').classList.add('show');
+            }
+        }
+        
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBanner').classList.remove('show');
+        }
+        
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieBanner').classList.remove('show');
+        }
+        
+        // Check cookie consent on page load
+        window.addEventListener('load', checkCookieConsent);
     </script>
 </body>
 </html>
