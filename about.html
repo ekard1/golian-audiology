@@ -29,7 +29,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .wire-logo {
@@ -62,7 +65,7 @@
         }
         
         .wire-cta-button {
-            padding: 12px 28px;
+            padding: 14px 35px;
             background: white;
             color: #1e5a8e;
             border: 2px solid #1e5a8e;
@@ -70,8 +73,27 @@
             border-radius: 25px;
             cursor: pointer;
             text-transform: uppercase;
-            font-size: 12px;
+            font-size: 13px;
             letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        
+        .wire-cta-button:hover {
+            background: #1e5a8e;
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(30, 90, 142, 0.3);
+        }
+        
+        .wire-cta-button:active {
+            transform: scale(0.98);
+        }
+        
+        @media (min-width: 769px) {
+            .wire-cta-button {
+                padding: 15px 38px;
+                font-size: 14px;
+            }
         }
         
         /* Page Hero */
@@ -675,7 +697,7 @@
             .wire-nav {
                 padding: 20px 30px;
                 flex-direction: column;
-                gap: 20px;
+                gap: 10px;
             }
             
             .wire-menu {
@@ -750,13 +772,13 @@
     <!-- Navigation -->
     <div class="wire-nav">
         <a href="index.html" class="wire-logo">
-            <img src="images/logo.png" alt="Golian Audiology Logo" style="height: 180px; width: auto;">
+            <img src="images/logo.png" alt="Golian Audiology Logo" style="height: 220px; width: auto;">
         </a>
         <div class="wire-menu">
             <a href="index.html" class="wire-menu-item">Home</a>
             <a href="about.html" class="wire-menu-item">About Us</a>
             <a href="services.html" class="wire-menu-item">Services</a>
-            <div class="wire-menu-item">Our Clinics</div>
+            <a href="about.html#contact-location" class="wire-menu-item">Our Clinics</a>
         </div>
         <button class="wire-cta-button" onclick="openModal()">Book Appointment</button>
     </div>
@@ -953,7 +975,7 @@
     </div>
     
     <!-- Contact & Location Section -->
-    <div class="contact-location-section">
+    <div id="contact-location" class="contact-location-section">
         <h2 class="section-title">Visit Our Office</h2>
         <div class="contact-grid">
             <div class="contact-info">
@@ -1033,6 +1055,14 @@
             <div class="wire-copyright">© 2025 Golian Audiology. All rights reserved.</div>
         </div>
     </div>
+    
+    <!-- Hidden form for Netlify detection (required for JavaScript form submissions) -->
+    <form name="appointment" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="firstName" />
+        <input type="text" name="lastName" />
+        <input type="tel" name="phone" />
+        <textarea name="message"></textarea>
+    </form>
     
     <!-- Contact Form Modal -->
     <div id="contactModal" class="modal">
@@ -1124,18 +1154,25 @@
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams(formData).toString()
             })
-            .then(() => {
-                alert('Thank you! Your appointment request has been submitted. We will contact you within 24 hours.');
-                closeModal();
-                form.reset();
+            .then(response => {
+                if (response.ok) {
+                    alert('Thank you! Your appointment request has been submitted. We will contact you within 24 hours.');
+                    closeModal();
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
                 submitBtn.textContent = 'Submit Appointment Request';
                 submitBtn.disabled = false;
             })
             .catch((error) => {
+                console.error('Error:', error);
                 alert('Oops! There was a problem. Please call us at (310) 666-1401.');
                 submitBtn.textContent = 'Submit Appointment Request';
                 submitBtn.disabled = false;
             });
+            
+            return false;
         }
         
         // Cookie Consent Functions
