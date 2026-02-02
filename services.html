@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - Golian Audiology</title>
+    <title>About Us - Golian Audiology</title>
     <style>
         * {
             margin: 0;
@@ -191,67 +191,29 @@
             filter: blur(0.5px);
         }
         
-        /* Services Grid */
-        .services-section {
+        /* Doctor Profile Section */
+        .doctor-profile {
             padding: 80px 60px;
             background: white;
         }
         
-        .service-item {
+        .profile-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 400px 1fr;
             gap: 80px;
-            margin-bottom: 100px;
-            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start;
         }
         
-        .service-item:nth-child(even) {
-            direction: rtl;
+        .doctor-image-container {
+            position: sticky;
+            top: 40px;
         }
         
-        .service-item:nth-child(even) > * {
-            direction: ltr;
-        }
-        
-        .service-content h2 {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-        
-        .service-content p {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-        
-        .service-content ul {
-            list-style: none;
-            margin-top: 25px;
-        }
-        
-        .service-content li {
-            font-size: 15px;
-            color: #666;
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-        }
-        
-        .service-content li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #1e5a8e;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        
-        .service-image {
+        .doctor-image {
             width: 100%;
-            height: 400px;
+            height: 500px;
             background: #f5f5f5;
             border-radius: 8px;
             display: flex;
@@ -259,6 +221,185 @@
             justify-content: center;
             color: #999;
             font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .doctor-name {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+        
+        .doctor-title {
+            font-size: 16px;
+            color: #1e5a8e;
+            font-weight: 500;
+        }
+        
+        .doctor-bio h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+        
+        .doctor-bio p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .credentials {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .credentials h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .credential-item {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .credential-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #1e5a8e;
+            font-size: 24px;
+            line-height: 1;
+        }
+        
+        .credential-degree {
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+            display: block;
+        }
+        
+        .credential-school {
+            font-size: 15px;
+            color: #666;
+            display: block;
+            margin-top: 3px;
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            padding: 80px 60px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+        
+        .mission-title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .mission-text {
+            font-size: 18px;
+            color: #666;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* Values Section */
+        .values-section {
+            padding: 80px 60px;
+            background: white;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 300;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .value-item {
+            text-align: center;
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: #f5f5f5;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e5a8e;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        .value-title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .value-text {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 60px;
+            background: white;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .cta-text {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button-large {
+            padding: 16px 45px;
+            background: white;
+            color: #1e5a8e;
+            border: 2px solid #1e5a8e;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
         }
         
         /* Contact & Location Section */
@@ -313,39 +454,6 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 60px;
-            background: white;
-            text-align: center;
-        }
-        
-        .cta-title {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-        
-        .cta-text {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        
-        .cta-button-large {
-            padding: 16px 45px;
-            background: white;
-            color: #1e5a8e;
-            border: 2px solid #1e5a8e;
-            font-weight: 600;
-            border-radius: 30px;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 1px;
         }
         
         /* Footer */
@@ -691,6 +799,8 @@
                 position: fixed;
                 top: 0;
                 right: -100%;
+                left: auto;
+                transform: none;
                 width: 280px;
                 height: 100vh;
                 background: white;
@@ -730,39 +840,39 @@
                 font-size: 36px;
             }
             
-            .services-section {
+            .doctor-profile {
                 padding: 60px 30px;
             }
             
-            .service-item {
+            .profile-container {
                 grid-template-columns: 1fr;
-                gap: 30px;
-                margin-bottom: 60px;
+                gap: 40px;
             }
             
-            .service-item:nth-child(even) {
-                direction: ltr;
+            .doctor-image-container {
+                position: static;
             }
             
-            .service-content h2 {
-                font-size: 28px;
+            .doctor-image {
+                height: 400px;
             }
             
-            .wire-footer-content {
+            .values-grid {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
             
             .contact-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .contact-info {
-                padding: 30px 20px;
+                gap: 40px;
             }
             
             .map-container {
                 height: 400px;
+            }
+            
+            .wire-footer-content {
+                grid-template-columns: 1fr;
             }
             
             .form-row {
@@ -793,10 +903,10 @@
         </a>
         <div class="wire-menu" id="mobileMenu">
             <button class="menu-close" onclick="toggleMenu()">&times;</button>
-            <a href="index.html" class="wire-menu-item" onclick="toggleMenu()">Home</a>
-            <a href="about.html" class="wire-menu-item" onclick="toggleMenu()">About Us</a>
-            <a href="services.html" class="wire-menu-item" onclick="toggleMenu()">Services</a>
-            <a href="about.html#contact-location" class="wire-menu-item" onclick="toggleMenu()">Our Clinics</a>
+            <a href="index.html" class="wire-menu-item">Home</a>
+            <a href="about.html" class="wire-menu-item">About Us</a>
+            <a href="services.html" class="wire-menu-item">Services</a>
+            <a href="about.html#contact-location" class="wire-menu-item">Our Clinics</a>
             <button class="wire-cta-button" onclick="openModal(); toggleMenu();">Book Appointment</button>
         </div>
         <button class="wire-cta-button nav-cta-button" onclick="openModal()">Book Appointment</button>
@@ -812,10 +922,9 @@
     
     <!-- Page Hero -->
     <div class="page-hero">
-        <h1 class="page-title">Our Services</h1>
+        <h1 class="page-title">About Us</h1>
         <p class="page-subtitle">
-            Comprehensive hearing care designed around you. From initial evaluations to ongoing support, 
-            we're here to help you hear better and live better.
+            Dedicated to helping you hear better and live better. Meet the team committed to your hearing health.
         </p>
     </div>
     
@@ -855,135 +964,160 @@
         </svg>
     </div>
     
-    <!-- Services Section -->
-    <div class="services-section">
-        <!-- Service 1 -->
-        <div class="service-item">
-            <div class="service-content">
-                <h2>Comprehensive Hearing Evaluations</h2>
-                <p>
-                    Not sure if you have hearing loss? We'll get to the bottom of it. Our thorough evaluations 
-                    use the latest diagnostic technology to assess your hearing and identify any issues.
-                </p>
-                <p>
-                    We take the time to understand your unique situation and create a clear path forward. 
-                    No rushing, no pressure—just honest answers and practical solutions.
-                </p>
-                <ul>
-                    <li>Complete hearing assessment</li>
-                    <li>Advanced diagnostic testing</li>
-                    <li>Personalized treatment recommendations</li>
-                    <li>Insurance-friendly options</li>
-                </ul>
+    <!-- Doctor Profile Section -->
+    <div class="doctor-profile">
+        <div class="profile-container">
+            <div class="doctor-image-container">
+                <div class="doctor-image">
+                    <img src="images/dr-golian.png" alt="Dr. Armin Golian" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                </div>
+                <div class="doctor-name">Dr. Armin Golian</div>
+                <div class="doctor-title">Doctor of Audiology</div>
             </div>
-            <div class="service-image">
-                <img src="images/hearing-evaluation.png" alt="Comprehensive Hearing Evaluation" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
-            </div>
-        </div>
-        
-        <!-- Service 2 -->
-        <div class="service-item">
-            <div class="service-content">
-                <h2>Tinnitus Evaluation & Treatment</h2>
+            
+            <div class="doctor-bio">
+                <h2>Meet Dr. Armin Golian</h2>
+                
                 <p>
-                    That constant ringing, buzzing, or humming can be incredibly frustrating. We get it. 
-                    Tinnitus affects millions, and while there's no magic cure, there are real solutions 
-                    that can bring significant relief.
+                    Dr. Armin Golian brings a passion for helping people reconnect with the sounds that matter most. 
+                    With years of experience in audiology and a deep commitment to patient care, Dr. Golian has built 
+                    a practice focused on personalized treatment and cutting-edge technology.
                 </p>
+                
                 <p>
-                    We'll identify what's causing your tinnitus and develop a customized treatment plan 
-                    using proven therapies that help you manage symptoms and regain your peace of mind.
+                    What sets Dr. Golian apart is his ability to really listen. He takes the time to understand each 
+                    patient's unique challenges and lifestyle needs, creating treatment plans that actually work in the 
+                    real world. Whether you're dealing with hearing loss, tinnitus, or just want to protect your hearing, 
+                    Dr. Golian is here to guide you every step of the way.
                 </p>
-                <ul>
-                    <li>Detailed tinnitus assessment</li>
-                    <li>Sound therapy options</li>
-                    <li>Lifestyle modification guidance</li>
-                    <li>Ongoing support and adjustments</li>
-                </ul>
-            </div>
-            <div class="service-image">
-                <img src="images/tinnitus-treatment.png" alt="Tinnitus Evaluation and Treatment" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
-            </div>
-        </div>
-        
-        <!-- Service 3 -->
-        <div class="service-item">
-            <div class="service-content">
-                <h2>Hearing Aid Fitting & Programming</h2>
+                
                 <p>
-                    Finding the right hearing aids is about more than just picking a device off the shelf. 
-                    We match you with technology that fits your lifestyle, budget, and specific hearing needs.
+                    His approach combines clinical expertise with genuine care. Patients appreciate his straightforward 
+                    explanations, patience in answering questions, and commitment to finding solutions that fit both 
+                    their hearing needs and their budget.
                 </p>
+                
+                <div class="credentials">
+                    <h3>Education & Credentials</h3>
+                    <div class="credential-item">
+                        <span class="credential-degree">Doctor of Audiology (Au.D.)</span>
+                        <span class="credential-school">Salus University</span>
+                    </div>
+                    <div class="credential-item">
+                        <span class="credential-degree">Bachelor of Science in Speech Pathology</span>
+                        <span class="credential-school">California State University, Northridge</span>
+                    </div>
+                </div>
+                
                 <p>
-                    From the initial fitting to fine-tuning and follow-up care, we make sure your hearing 
-                    aids work perfectly. And if something needs adjusting? We're always here to help.
+                    Beyond his clinical work, Dr. Golian stays current with the latest advances in hearing technology 
+                    and treatment methods. He believes that education is just as important as treatment—empowering 
+                    patients to make informed decisions about their hearing health.
                 </p>
-                <ul>
-                    <li>Personalized device selection</li>
-                    <li>Custom fitting and programming</li>
-                    <li>Bluetooth and smartphone integration</li>
-                    <li>Unlimited follow-up adjustments</li>
-                </ul>
-            </div>
-            <div class="service-image">
-                <img src="images/hearing-aids.png" alt="Hearing Aid Fitting and Programming" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
-            </div>
-        </div>
-        
-        <!-- Service 4 -->
-        <div class="service-item">
-            <div class="service-content">
-                <h2>Hearing Aid Repairs & Maintenance</h2>
+                
                 <p>
-                    Hearing aids are sophisticated devices, and sometimes they need a little TLC. Whether 
-                    it's routine maintenance or an unexpected issue, we've got you covered.
+                    When he's not in the office, Dr. Golian enjoys spending time with family and staying active in 
+                    the West Los Angeles community. He's proud to serve the area and help people rediscover the joy 
+                    of clear, effortless hearing.
                 </p>
-                <p>
-                    We offer quick repairs, thorough cleanings, and preventive care to keep your devices 
-                    running smoothly. Most repairs can be done right here in our office.
-                </p>
-                <ul>
-                    <li>In-office repairs and cleaning</li>
-                    <li>Manufacturer warranty service</li>
-                    <li>Battery replacement and accessories</li>
-                    <li>Regular maintenance check-ups</li>
-                </ul>
-            </div>
-            <div class="service-image">
-                <img src="images/hearing-aid-repair.png" alt="Hearing Aid Repairs and Maintenance" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
-            </div>
-        </div>
-        
-        <!-- Service 5 -->
-        <div class="service-item">
-            <div class="service-content">
-                <h2>Custom Hearing Protection</h2>
-                <p>
-                    Prevention is key. Whether you work in loud environments, attend concerts, or enjoy 
-                    shooting sports, protecting your hearing now can save you from problems down the road.
-                </p>
-                <p>
-                    We create custom-fitted earplugs that provide superior protection while still letting 
-                    you hear what you need to. Comfortable, effective, and built to last.
-                </p>
-                <ul>
-                    <li>Custom-molded ear protection</li>
-                    <li>Musician's earplugs</li>
-                    <li>Industrial hearing protection</li>
-                    <li>Swimming and water sports plugs</li>
-                </ul>
-            </div>
-            <div class="service-image">
-                <img src="images/hearing-protection.png" alt="Custom Hearing Protection" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
             </div>
         </div>
     </div>
     
+    <!-- Wave Decoration 2 -->
+    <div class="wave-decoration">
+        <svg viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 50 Q 200 30, 400 50 T 800 50 T 1200 50" 
+                  stroke="#8ab4f8" 
+                  stroke-width="1" 
+                  fill="none"
+                  opacity="0.15"/>
+            <path d="M0 45 Q 200 25, 400 45 T 800 45 T 1200 45" 
+                  stroke="#6ba3e8" 
+                  stroke-width="1.5" 
+                  fill="none"
+                  opacity="0.2"/>
+            <path d="M0 50 Q 200 35, 400 50 T 800 50 T 1200 50" 
+                  stroke="#4a9fd8" 
+                  stroke-width="1.5" 
+                  fill="none"
+                  opacity="0.25"/>
+            <path d="M0 55 Q 200 40, 400 55 T 800 55 T 1200 55" 
+                  stroke="#3a8fc8" 
+                  stroke-width="1.5" 
+                  fill="none"
+                  opacity="0.3"/>
+            <path d="M0 50 Q 200 32, 400 50 T 800 50 T 1200 50" 
+                  stroke="#2a7fb8" 
+                  stroke-width="2" 
+                  fill="none"
+                  opacity="0.35"/>
+            <path d="M0 52 Q 200 38, 400 52 T 800 52 T 1200 52" 
+                  stroke="#1e5a8e" 
+                  stroke-width="1" 
+                  fill="none"
+                  opacity="0.2"/>
+        </svg>
+    </div>
+    
+    <!-- Mission Section -->
+    <div class="mission-section">
+        <h2 class="mission-title">Our Mission</h2>
+        <p class="mission-text">
+            At Golian Audiology, we believe everyone deserves to hear clearly and live fully. Our mission is to 
+            provide exceptional, personalized hearing care using the latest technology and a patient-first approach. 
+            We're not just treating hearing loss—we're helping people reconnect with their loved ones, enjoy their 
+            favorite activities, and engage with the world around them.
+        </p>
+    </div>
+    
+    <!-- Values Section -->
+    <div class="values-section">
+        <h2 class="section-title">What We Stand For</h2>
+        <div class="values-grid">
+            <div class="value-item">
+                <div class="value-icon">1</div>
+                <h3 class="value-title">Personalized Care</h3>
+                <p class="value-text">
+                    No two patients are the same. We take the time to understand your unique needs and create 
+                    treatment plans that work for your lifestyle.
+                </p>
+            </div>
+            
+            <div class="value-item">
+                <div class="value-icon">2</div>
+                <h3 class="value-title">Honest Guidance</h3>
+                <p class="value-text">
+                    We'll always give you straightforward advice and recommendations. No pressure, no sales tactics—
+                    just honest guidance to help you make the best decision.
+                </p>
+            </div>
+            
+            <div class="value-item">
+                <div class="value-icon">3</div>
+                <h3 class="value-title">Ongoing Support</h3>
+                <p class="value-text">
+                    Our relationship doesn't end after your first visit. We're here for follow-ups, adjustments, 
+                    and support whenever you need it.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <h2 class="cta-title">Ready to Start Your Journey?</h2>
+        <p class="cta-text">Schedule an appointment with Dr. Golian and take the first step toward better hearing.</p>
+        <button class="cta-button-large" onclick="openModal()">Book An Appointment</button>
+    </div>
+    
     <!-- Contact & Location Section -->
-    <div class="contact-location-section">
+    <div id="contact-location" class="contact-location-section">
+        <h2 class="section-title">Visit Our Office</h2>
         <div class="contact-grid">
             <div class="contact-info">
-                <h2 class="contact-title">Visit Our Office</h2>
+                <h3 class="contact-title">West Los Angeles</h3>
+                
                 <div class="contact-item">
                     <div class="contact-label">Address</div>
                     <div class="contact-text">
@@ -991,10 +1125,14 @@
                         Los Angeles, CA 90025
                     </div>
                 </div>
+                
                 <div class="contact-item">
                     <div class="contact-label">Phone</div>
-                    <div class="contact-text">(310) 666-1401</div>
+                    <div class="contact-text">
+                        <a href="tel:3106661401" style="color: #1e5a8e; text-decoration: none;">(310) 666-1401</a>
+                    </div>
                 </div>
+                
                 <div class="contact-item">
                     <div class="contact-label">Office Hours</div>
                     <div class="contact-text">
@@ -1003,24 +1141,24 @@
                         Sunday: Closed
                     </div>
                 </div>
+                
+                <div class="contact-item">
+                    <button class="cta-button-large" onclick="openModal()" style="margin-top: 20px;">Schedule Appointment</button>
+                </div>
             </div>
+            
             <div class="map-container">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.0227784445835!2d-118.4657!3d34.0422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bb5b5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2s1444%20S%20Carmelina%20Ave%20Suite%20133%2C%20Los%20Angeles%2C%20CA%2090025!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-                    style="border:0; width: 100%; height: 100%;"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.7899438162816!2d-118.46621!3d34.03668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbf1e5c0d5a3%3A0x1234567890abcdef!2s1444%20S%20Carmelina%20Ave%20Suite%20133%2C%20Los%20Angeles%2C%20CA%2090025!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; border-radius: 8px;" 
                     allowfullscreen="" 
                     loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         </div>
-    </div>
-    
-    <!-- CTA Section -->
-    <div class="cta-section">
-        <h2 class="cta-title">Ready to Take the Next Step?</h2>
-        <p class="cta-text">Schedule your appointment today and start your journey to better hearing.</p>
-        <button class="cta-button-large" onclick="openModal()">Book An Appointment</button>
     </div>
     
     <!-- Footer -->
