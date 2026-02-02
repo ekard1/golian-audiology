@@ -55,6 +55,14 @@
             align-items: center;
         }
         
+        .wire-menu .wire-cta-button {
+            display: none;
+        }
+        
+        .nav-cta-button {
+            display: block;
+        }
+        
         .wire-menu-item {
             font-size: 16px;
             color: #666;
@@ -134,6 +142,10 @@
         
         .mobile-menu-overlay.active {
             display: block;
+        }
+        
+        .menu-close {
+            display: none;
         }
         
         @media (min-width: 769px) {
@@ -742,19 +754,45 @@
         
         @media (max-width: 768px) {
             .wire-nav {
-                padding: 15px 20px;
+                padding: 10px 15px;
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
             }
             
             .wire-nav img {
-                height: 60px !important;
-                max-height: 60px;
+                height: 45px !important;
+                max-height: 45px;
             }
             
             .hamburger {
                 display: flex;
+            }
+            
+            .wire-menu .wire-cta-button {
+                display: block;
+            }
+            
+            .nav-cta-button {
+                display: none;
+            }
+            
+            .menu-close {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 32px;
+                color: #666;
+                cursor: pointer;
+                background: none;
+                border: none;
+                line-height: 1;
+                padding: 5px;
+            }
+            
+            .menu-close:hover {
+                color: #333;
             }
             
             .wire-menu {
@@ -862,12 +900,14 @@
             <img src="images/logo.png" alt="Golian Audiology Logo" style="height: 220px; width: auto;">
         </a>
         <div class="wire-menu" id="mobileMenu">
-            <a href="index.html" class="wire-menu-item">Home</a>
-            <a href="about.html" class="wire-menu-item">About Us</a>
-            <a href="services.html" class="wire-menu-item">Services</a>
-            <a href="about.html#contact-location" class="wire-menu-item">Our Clinics</a>
+            <button class="menu-close" onclick="toggleMenu()">&times;</button>
+            <a href="index.html" class="wire-menu-item" onclick="toggleMenu()">Home</a>
+            <a href="about.html" class="wire-menu-item" onclick="toggleMenu()">About Us</a>
+            <a href="services.html" class="wire-menu-item" onclick="toggleMenu()">Services</a>
+            <a href="about.html#contact-location" class="wire-menu-item" onclick="toggleMenu()">Our Clinics</a>
             <button class="wire-cta-button" onclick="openModal(); toggleMenu();">Book Appointment</button>
         </div>
+        <button class="wire-cta-button nav-cta-button" onclick="openModal()">Book Appointment</button>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
