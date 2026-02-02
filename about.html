@@ -25,7 +25,7 @@
         /* Navigation */
         .wire-nav {
             background: #fff;
-            padding: 25px 60px;
+            padding: 15px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -157,7 +157,7 @@
         
         /* Page Hero */
         .page-hero {
-            padding: 180px 60px 60px;
+            padding: 140px 60px 60px;
             background: white;
             text-align: center;
         }
@@ -754,19 +754,22 @@
         
         @media (max-width: 768px) {
             .wire-nav {
-                padding: 10px 15px;
+                padding: 12px 20px;
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: center;
+                position: relative;
             }
             
             .wire-nav img {
-                height: 45px !important;
-                max-height: 45px;
+                height: 70px !important;
+                max-height: 70px;
             }
             
             .hamburger {
                 display: flex;
+                position: absolute;
+                right: 20px;
             }
             
             .wire-menu .wire-cta-button {
@@ -833,7 +836,7 @@
             }
             
             .page-hero {
-                padding: 120px 30px 40px;
+                padding: 130px 30px 40px;
             }
             
             .page-title {
