@@ -13,6 +13,8 @@
         
         html {
             overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
         }
         
         body {
@@ -20,6 +22,8 @@
             background: white;
             overflow-x: hidden;
             width: 100%;
+            max-width: 100vw;
+            position: relative;
         }
         
         /* Navigation */
@@ -948,12 +952,12 @@
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
-                position: relative;
+                position: fixed;
             }
             
             .wire-nav img {
-                height: 70px !important;
-                max-height: 70px;
+                height: 80px !important;
+                max-height: 80px;
             }
             
             .hamburger {
@@ -1026,7 +1030,9 @@
             }
             
             .wire-hero {
-                padding: 130px 30px 60px;
+                padding: 140px 30px 60px;
+                overflow-x: hidden;
+                max-width: 100vw;
             }
             
             .wire-section,
@@ -1036,6 +1042,8 @@
             .contact-location-section,
             .review-section {
                 padding: 60px 30px;
+                overflow-x: hidden;
+                max-width: 100vw;
             }
             
             .wire-cards,
