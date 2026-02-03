@@ -160,7 +160,7 @@
             position: relative;
             min-height: 450px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
             gap: 80px;
         }
@@ -247,11 +247,25 @@
             font-size: 14px;
         }
         
+        .doctor-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
         .doctor-name {
             text-align: center;
-            margin-top: 15px;
-            font-size: 13px;
-            color: #666;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .doctor-image-container {
+            display: flex;
+            justify-content: center;
         }
         
         /* Wave Decoration */
@@ -1092,12 +1106,10 @@
             <div class="wire-text">
                 Hearing loss doesn't have to hold you back. Whether you're missing conversations with loved ones or struggling in noisy environments, we're here to help you reconnect with the sounds that matter most. Dr. Armin Golian and our team provide personalized care using the latest technology to get you hearing your best.
             </div>
-            <button class="wire-cta-button" onclick="openModal()">Book An Appointment</button>
         </div>
-        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <div class="wire-hero-image"></div>
+        <div class="doctor-container">
             <div class="doctor-name">Dr. Armin Golian Aud</div>
-            <div class="doctor-image-container" style="display: flex; justify-content: center;">
+            <div class="doctor-image-container">
                 <img src="images/dr-golian.png" alt="Dr. Armin Golian" style="width: 100%; max-width: 350px; height: auto; border-radius: 8px; margin-top: 15px;">
             </div>
         </div>
