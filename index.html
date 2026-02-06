@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golian Audiology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
@@ -19,7 +22,7 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             background: white;
             overflow-x: hidden;
             width: 100%;
@@ -68,22 +71,28 @@
         }
         
         .wire-menu-item {
-            font-size: 15px;
-            color: #666;
-            font-weight: 400;
+            font-size: 16px;
+            color: #1e5a8e;
+            font-weight: 500;
             cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .wire-menu-item:hover {
+            color: #1e5a8e;
+            text-decoration: none;
         }
         
         .wire-cta-button {
-            padding: 8px 20px;
+            padding: 10px 28px;
             background: white;
             color: #1e5a8e;
             border: 2px solid #1e5a8e;
-            font-weight: 500;
+            font-weight: 600;
             border-radius: 25px;
             cursor: pointer;
             text-transform: uppercase;
-            font-size: 10px;
+            font-size: 12px;
             letter-spacing: 1px;
             transition: all 0.3s ease;
         }
@@ -968,6 +977,7 @@
                 justify-content: center;
                 align-items: center;
                 position: fixed;
+                background: transparent;
             }
             
             .wire-nav img {
@@ -1048,6 +1058,10 @@
                 padding: 120px 30px 60px;
                 overflow-x: hidden;
                 max-width: 100vw;
+            }
+            
+            .wire-title {
+                font-size: 28px;
             }
             
             .wire-section,
