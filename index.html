@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golian Audiology</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -155,7 +156,7 @@
         
         /* Hero Section */
         .wire-hero {
-            padding: 300px 60px 60px;
+            padding: 200px 60px 60px;
             background: white;
             position: relative;
             min-height: 450px;
@@ -1044,7 +1045,7 @@
             }
             
             .wire-hero {
-                padding: 140px 30px 60px;
+                padding: 120px 30px 60px;
                 overflow-x: hidden;
                 max-width: 100vw;
             }
@@ -1101,11 +1102,14 @@
                 <!-- BLANK SPACE - Insert Golian Audiology Google Review Here Later -->
             </div>
             <div class="wire-tagline">Golian Audiology</div>
-            <div class="wire-title">Leading Audiologist</div>
-            <div class="wire-subtitle">West Los Angeles</div>
+            <div class="wire-title">Trusted Audiologist with 15+ Years Experience</div>
             <div class="wire-text">
-                Hearing loss doesn't have to hold you back. Whether you're missing conversations with loved ones or struggling in noisy environments, we're here to help you reconnect with the sounds that matter most. Dr. Armin Golian and our team provide personalized care using the latest technology to get you hearing your best.
+                Hearing loss shouldn't keep you from the moments that matter most. If you're straining to follow conversations, avoiding social settings, or feeling disconnected from the world around you, you're not alone — and we're here to help.
             </div>
+            <div class="wire-text">
+                With more than 15 years of experience specializing in hearing aids and rehabilitative care, Dr. Armin Golian provides compassionate, personalized solutions using today's most advanced technology. Our goal is simple: help you hear clearly, communicate confidently, and live fully again.
+            </div>
+            <button class="wire-cta-button hero-cta-button" onclick="openModal()" style="margin-top: 25px;">Book An Appointment</button>
         </div>
         <div class="doctor-container">
             <div class="doctor-name">Dr. Armin Golian Aud</div>
@@ -1158,7 +1162,6 @@
         <div class="wire-section-text">
                             As a leading Audiologist in West Los Angeles we offer expert knowledge and state of the art technology & equipment for a range of treatments tailored to your specific needs. We provide one-on-one hearing counseling, hearing tests, comprehensive evaluations, and concierge audiology services.
         </div>
-        <div class="video-placeholder">VIDEO EMBED</div>
     </div>
     
     <!-- Services Section -->
@@ -1169,21 +1172,21 @@
         
         <div class="wire-cards">
             <div class="wire-card">
-                <div class="wire-card-icon">ICON</div>
+                <div class="wire-card-icon"><i class="fas fa-stethoscope" style="font-size: 48px; color: #4285f4;"></i></div>
                 <div class="wire-card-title">Hearing Evaluations</div>
                 <div class="wire-card-text">
                     We'll run a complete hearing evaluation to figure out exactly what's going on with your hearing. Using advanced testing, we'll identify any hearing loss and create a treatment plan that actually works for your lifestyle.
                 </div>
             </div>
             <div class="wire-card">
-                <div class="wire-card-icon">ICON</div>
+                <div class="wire-card-icon"><i class="fas fa-bell" style="font-size: 48px; color: #4285f4;"></i></div>
                 <div class="wire-card-title">Tinnitus Management</div>
                 <div class="wire-card-text">
                     Dealing with ringing or buzzing in your ears? You're not alone. We offer proven treatments that can significantly reduce tinnitus symptoms and help you find relief so you can focus on what matters.
                 </div>
             </div>
             <div class="wire-card">
-                <div class="wire-card-icon">ICON</div>
+                <div class="wire-card-icon"><i class="fas fa-ear-listen" style="font-size: 48px; color: #4285f4;"></i></div>
                 <div class="wire-card-title">Hearing Aids</div>
                 <div class="wire-card-text">
                     Finding the right hearing aids is a big deal, and we make sure they're perfectly fitted to your needs. From the initial fitting to ongoing adjustments, we'll make sure you're comfortable and hearing clearly.
@@ -1299,15 +1302,19 @@
             <p class="review-text">See our reviews on Google</p>
         </div>
         <div class="google-reviews-embed">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d826.5056972558033!2d-118.46734997076795!3d34.04272449999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbca9d14188b%3A0x74ff8ff9d6aa2315!2sGolian%20Audiology!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-                width="100%" 
-                height="450" 
-                style="border:0; border-radius: 8px;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <!-- Google Reviews Widget -->
+            <div style="text-align: center; padding: 40px 20px; background: #f9f9f9; border-radius: 8px;">
+                <div style="margin-bottom: 20px;">
+                    <span style="font-size: 48px; color: #fbbc04;">★★★★★</span>
+                </div>
+                <p style="font-size: 18px; color: #333; margin-bottom: 10px;">Rated 5.0 Stars on Google</p>
+                <p style="font-size: 14px; color: #666; margin-bottom: 25px;">Based on patient reviews</p>
+                <a href="https://www.google.com/search?q=golian+audiology#lrd=0x80c2bbca9d14188b:0x74ff8ff9d6aa2315,1" 
+                   target="_blank" 
+                   style="display: inline-block; padding: 12px 30px; background: #4285f4; color: white; text-decoration: none; border-radius: 4px; font-weight: 500;">
+                    Read Our Google Reviews
+                </a>
+            </div>
         </div>
         <div style="margin-top: 30px;">
             <a href="https://www.google.com/search?q=golian+audiology&rlz=1C1RXMK_enUS1039US1039&oq=golian+audiology+&gs_lcrp=EgZjaHJvbWUyDAgAEEUYORiABBiiBDIKCAEQABiABBiiBDIKCAIQABiABBiiBDIKCAMQABiiBBiJBTIKCAQQABiiBBiJBTIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDYxMjdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x80c2bbca9d14188b:0x74ff8ff9d6aa2315,1,,,," 
