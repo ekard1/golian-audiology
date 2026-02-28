@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - Golian Audiology</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1073,9 +1078,6 @@
             <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
             
             <form id="appointmentForm" action="https://formspree.io/f/meelqadj" method="POST">
-                <!-- Formspree will handle submissions -->
-                
-                <!-- Honeypot field for spam protection (hidden from users) -->
                 <p style="display:none;">
                     <label>Don't fill this out if you're human: <input name="_gotcha" /></label>
                 </p>
@@ -1121,16 +1123,13 @@
     </div>
     
     <script>
-        // Hamburger Menu Toggle
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             const hamburger = document.getElementById('hamburger');
             const overlay = document.getElementById('menuOverlay');
-            
             menu.classList.toggle('active');
             hamburger.classList.toggle('active');
             overlay.classList.toggle('active');
-            
             if (menu.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
             } else {
@@ -1155,44 +1154,6 @@
             }
         }
         
-        function handleSubmit(event) {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            const submitBtn = form.querySelector('.form-submit');
-            
-            // Show loading state
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            // Submit to Netlify
-            fetch('/', {
-                method: 'POST',
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Thank you! Your appointment request has been submitted. We will contact you within 24 hours.');
-                    closeModal();
-                    form.reset();
-                } else {
-                    throw new Error('Form submission failed');
-                }
-                submitBtn.textContent = 'Submit Appointment Request';
-                submitBtn.disabled = false;
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                alert('Oops! There was a problem. Please call us at (310) 666-1401.');
-                submitBtn.textContent = 'Submit Appointment Request';
-                submitBtn.disabled = false;
-            });
-            
-            return false;
-        }
-        
-        // Cookie Consent Functions
         function checkCookieConsent() {
             const consent = localStorage.getItem('cookieConsent');
             if (!consent) {
@@ -1210,7 +1171,6 @@
             document.getElementById('cookieBanner').classList.remove('show');
         }
         
-        // Check cookie consent on page load
         window.addEventListener('load', checkCookieConsent);
     </script>
 </body>
