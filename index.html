@@ -14,27 +14,16 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            overflow-x: hidden;
-            width: 100%;
-            max-width: 100%;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { overflow-x: hidden; width: 100%; max-width: 100%; }
         body {
             font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             background: white;
             overflow-x: hidden;
             width: 100%;
             max-width: 100vw;
-            position: relative;
         }
-        
+
         /* Navigation */
         .wire-nav {
             background: #fff;
@@ -43,21 +32,11 @@
             justify-content: space-between;
             align-items: center;
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 1000;
-            box-shadow: none;
             width: 100%;
         }
-        
-        .wire-logo {
-            font-size: 20px;
-            font-weight: 400;
-            letter-spacing: 1px;
-            color: #333;
-        }
-        
+        .wire-logo { font-size: 20px; font-weight: 400; letter-spacing: 1px; color: #333; }
         .wire-menu {
             position: absolute;
             left: 50%;
@@ -66,28 +45,9 @@
             gap: 30px;
             align-items: center;
         }
-        
-        .wire-menu .wire-cta-button {
-            display: none;
-        }
-        
-        .nav-cta-button {
-            display: block;
-        }
-        
-        .wire-menu-item {
-            font-size: 16px;
-            color: #1e5a8e;
-            font-weight: 500;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        
-        .wire-menu-item:hover {
-            color: #1e5a8e;
-            text-decoration: none;
-        }
-        
+        .wire-menu .wire-cta-button { display: none; }
+        .nav-cta-button { display: block; }
+        .wire-menu-item { font-size: 16px; color: #1e5a8e; font-weight: 500; cursor: pointer; text-decoration: none; }
         .wire-cta-button {
             padding: 10px 28px;
             background: white;
@@ -101,74 +61,32 @@
             letter-spacing: 1px;
             transition: all 0.3s ease;
         }
-        
         .wire-cta-button:hover {
-            background: #1e5a8e;
-            color: white;
+            background: #1e5a8e; color: white;
             transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(30, 90, 142, 0.3);
+            box-shadow: 0 4px 15px rgba(30,90,142,0.3);
         }
-        
-        .wire-cta-button:active {
-            transform: scale(0.98);
-        }
-        
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 5px;
-        }
-        
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            margin: 3px 0;
-            transition: 0.3s;
-            border-radius: 3px;
-        }
-        
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-        
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-        
+        .hamburger { display: none; flex-direction: column; cursor: pointer; padding: 5px; }
+        .hamburger span { width: 25px; height: 3px; background: #333; margin: 3px 0; transition: 0.3s; border-radius: 3px; }
+        .hamburger.active span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
         .mobile-menu-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
+            display: none; position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); z-index: 999;
         }
-        
-        .mobile-menu-overlay.active {
-            display: block;
-        }
-        
-        .menu-close {
-            display: none;
-        }
-        
+        .mobile-menu-overlay.active { display: block; }
+        .menu-close { display: none; }
+
+        /* Call Now - hidden on desktop */
+        .call-now-btn { display: none; }
+
         @media (min-width: 769px) {
-            .wire-cta-button {
-                padding: 15px 38px;
-                font-size: 14px;
-            }
+            .wire-cta-button { padding: 15px 38px; font-size: 14px; }
         }
-        
-        /* Hero Section */
+
+        /* Hero */
         .wire-hero {
             padding: 120px 60px 60px;
             background: white;
@@ -179,913 +97,215 @@
             justify-content: center;
             gap: 80px;
         }
-        
-        .wire-hero-content {
-            max-width: 550px;
-            z-index: 2;
-            margin-left: 0;
-        }
-        
-        .google-review {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 20px;
-            min-height: 30px;
-        }
-        
-        .google-logo {
-            font-size: 18px;
-            font-weight: 600;
-            color: #4285f4;
-        }
-        
-        .stars {
-            color: #fbbc04;
-            font-size: 16px;
-        }
-        
-        .review-count {
-            font-size: 13px;
-            color: #666;
-            margin-left: 5px;
-        }
-        
-        .wire-tagline {
-            font-size: 13px;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            font-weight: 300;
-        }
-        
-        .wire-title {
-            font-size: 48px;
-            color: #333;
-            margin-bottom: 10px;
-            font-weight: 400;
-            line-height: 1.2;
-        }
-        
-        .wire-subtitle {
-            font-size: 42px;
-            color: #666;
-            margin-bottom: 25px;
-            font-weight: 300;
-        }
-        
-        .wire-text {
-            font-size: 15px;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-        
-        .wire-hero-image {
-            width: 350px;
-            height: 350px;
-            background: transparent;
-            border-radius: 50%;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .wire-hero-image::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #ccc;
-            font-weight: 600;
-            font-size: 14px;
-        }
-        
-        .doctor-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .doctor-name {
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 16px;
-            color: #333;
-            font-weight: 500;
-        }
-        
-        .doctor-image-container {
-            display: flex;
-            justify-content: center;
-        }
-        
-        /* Wave Decoration */
-        .wave-decoration {
-            width: 100%;
-            height: 100px;
-            position: relative;
-            margin: 40px 0;
-        }
-        
-        .wave-decoration svg {
-            width: 100%;
-            height: 100%;
-            filter: blur(0.5px);
-        }
-        
-        /* About Section */
-        .wire-about {
-            padding: 80px 60px;
-            background: white;
-            text-align: center;
-            position: relative;
-        }
-        
-        .wire-section-title {
-            font-size: 32px;
-            color: #333;
-            margin-bottom: 30px;
-            font-weight: 300;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-        
-        .wire-section-text {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 15px;
-            color: #666;
-            line-height: 1.8;
-        }
-        
-        /* Video Section */
-        .video-placeholder {
-            width: 500px;
-            height: 280px;
-            background: #333;
-            margin: 40px auto 0;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 14px;
-        }
-        
-        /* Services Section */
-        .wire-section {
-            padding: 80px 60px;
-            background: white;
-            position: relative;
-        }
-        
-        .wire-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: #e0e0e0;
-        }
-        
-        .wire-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 50px;
-            margin-top: 50px;
-        }
-        
-        .wire-card {
-            padding: 30px 20px;
-            background: white;
-            text-align: center;
-        }
-        
-        .wire-card-icon {
-            width: 80px;
-            height: 80px;
-            background: #f5f5f5;
-            border-radius: 50%;
-            margin: 0 auto 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: #999;
-        }
-        
-        .wire-card-title {
-            font-size: 18px;
-            color: #333;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        
-        .wire-card-text {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        /* Testimonials Section */
-        .wire-testimonials {
-            background: white;
-            padding: 80px 60px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .wire-testimonials::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: #e0e0e0;
-        }
-        
-        .wire-testimonial-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-top: 40px;
-        }
-        
-        .wire-testimonial-card {
-            background: #fafafa;
-            padding: 35px 30px;
-            border-radius: 8px;
-        }
-        
-        .wire-quote {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.7;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-        
-        .wire-author {
-            font-size: 13px;
-            color: #333;
-            font-weight: 600;
-        }
-        
-        /* Locations Section */
-        .wire-locations-section {
-            padding: 80px 60px;
-            background: white;
-            position: relative;
-        }
-        
-        .wire-locations-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: #e0e0e0;
-        }
-        
-        .wire-locations {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 60px;
-            margin-top: 50px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .wire-location-card {
-            padding: 0;
-            background: white;
-        }
-        
-        .wire-location-title {
-            font-size: 22px;
-            color: #333;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-        
-        .wire-info-block {
-            margin-bottom: 15px;
-        }
-        
-        .wire-info-label {
-            font-size: 12px;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-        
-        .wire-info-text {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.5;
-        }
-        
-        /* Contact & Location Section */
-        .contact-location-section {
-            padding: 80px 60px;
-            background: #f9f9f9;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .contact-info {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-        }
-        
-        .contact-title {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 30px;
-            font-weight: 400;
-        }
-        
-        .contact-item {
-            margin-bottom: 25px;
-        }
-        
-        .contact-label {
-            font-size: 12px;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .contact-text {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .map-container {
-            width: 100%;
-            height: 500px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Google Review Section */
-        .review-section {
-            padding: 80px 60px;
-            background: white;
-            text-align: center;
-        }
-        
-        .review-header {
-            max-width: 700px;
-            margin: 0 auto 40px;
-        }
-        
-        .review-title {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 15px;
-            font-weight: 300;
-        }
-        
-        .review-text {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .google-reviews-embed {
-            max-width: 900px;
-            margin: 0 auto;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
+        .wire-hero-content { max-width: 550px; z-index: 2; }
+        .google-review { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; min-height: 30px; }
+        .wire-tagline { font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 300; }
+        .wire-title { font-size: 48px; color: #333; margin-bottom: 10px; font-weight: 400; line-height: 1.2; }
+        .wire-text { font-size: 15px; color: #666; line-height: 1.6; margin-bottom: 30px; }
+        .doctor-container { display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .doctor-name { text-align: center; margin-bottom: 10px; font-size: 16px; color: #333; font-weight: 500; }
+        .doctor-image-container { display: flex; justify-content: center; }
+
+        /* Wave */
+        .wave-decoration { width: 100%; height: 100px; position: relative; margin: 40px 0; }
+        .wave-decoration svg { width: 100%; height: 100%; filter: blur(0.5px); }
+
+        /* About */
+        .wire-about { padding: 80px 60px; background: white; text-align: center; }
+        .wire-section-title { font-size: 32px; color: #333; margin-bottom: 30px; font-weight: 300; text-transform: uppercase; letter-spacing: 3px; }
+        .wire-section-text { max-width: 800px; margin: 0 auto; font-size: 15px; color: #666; line-height: 1.8; }
+
+        /* Services */
+        .wire-section { padding: 80px 60px; background: white; position: relative; }
+        .wire-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #e0e0e0; }
+        .wire-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; margin-top: 50px; }
+        .wire-card { padding: 30px 20px; background: white; text-align: center; }
+        .wire-card-icon { width: 80px; height: 80px; background: #f5f5f5; border-radius: 50%; margin: 0 auto 25px; display: flex; align-items: center; justify-content: center; }
+        .wire-card-title { font-size: 18px; color: #333; margin-bottom: 15px; font-weight: 500; }
+        .wire-card-text { font-size: 14px; color: #666; line-height: 1.6; }
+
+        /* Testimonials */
+        .wire-testimonials { background: white; padding: 80px 60px; text-align: center; position: relative; }
+        .wire-testimonials::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #e0e0e0; }
+        .wire-testimonial-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 40px; }
+        .wire-testimonial-card { background: #fafafa; padding: 35px 30px; border-radius: 8px; }
+        .wire-quote { font-size: 14px; color: #666; line-height: 1.7; font-style: italic; margin-bottom: 20px; }
+        .wire-author { font-size: 13px; color: #333; font-weight: 600; }
+
+        /* Contact */
+        .contact-location-section { padding: 80px 60px; background: #f9f9f9; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; max-width: 1200px; margin: 0 auto; }
+        .contact-info { background: white; padding: 40px; border-radius: 8px; }
+        .contact-title { font-size: 28px; color: #333; margin-bottom: 30px; font-weight: 400; }
+        .contact-item { margin-bottom: 25px; }
+        .contact-label { font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
+        .contact-text { font-size: 16px; color: #666; line-height: 1.6; }
+        .map-container { width: 100%; height: 500px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+
+        /* Reviews */
+        .review-section { padding: 80px 60px; background: white; text-align: center; }
+        .review-header { max-width: 700px; margin: 0 auto 40px; }
+        .review-title { font-size: 36px; color: #333; margin-bottom: 15px; font-weight: 300; }
+        .review-text { font-size: 16px; color: #666; line-height: 1.6; }
+        .google-reviews-embed { max-width: 900px; margin: 0 auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
         .review-button {
-            display: inline-block;
-            padding: 14px 35px;
-            background: #4285f4;
-            color: white;
-            border: 2px solid #4285f4;
-            font-weight: 600;
-            border-radius: 30px;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 1px;
-            text-decoration: none;
-            transition: all 0.3s;
-            margin: 0 10px;
+            display: inline-block; padding: 14px 35px; background: #4285f4; color: white;
+            border: 2px solid #4285f4; font-weight: 600; border-radius: 30px; cursor: pointer;
+            text-transform: uppercase; font-size: 12px; letter-spacing: 1px; text-decoration: none;
+            transition: all 0.3s; margin: 0 10px;
         }
-        
-        .review-button:hover {
-            background: #3367d6;
-            border-color: #3367d6;
-        }
-        
         .review-link-button {
-            display: inline-block;
-            padding: 14px 35px;
-            background: white;
-            color: #4285f4;
-            border: 2px solid #4285f4;
-            font-weight: 600;
-            border-radius: 30px;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 1px;
-            text-decoration: none;
-            transition: all 0.3s;
-            margin: 0 10px;
+            display: inline-block; padding: 14px 35px; background: white; color: #4285f4;
+            border: 2px solid #4285f4; font-weight: 600; border-radius: 30px; cursor: pointer;
+            text-transform: uppercase; font-size: 12px; letter-spacing: 1px; text-decoration: none;
+            transition: all 0.3s; margin: 0 10px;
         }
-        
-        .review-link-button:hover {
-            background: #f0f7ff;
-        }
-        
-        /* CTA Section */
-        .wire-cta-section {
-            padding: 100px 60px;
-            background: white;
-            text-align: center;
-            position: relative;
-        }
-        
-        .wire-cta-title {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-        
+
+        /* CTA */
+        .wire-cta-section { padding: 100px 60px; background: white; text-align: center; }
+        .wire-cta-title { font-size: 36px; color: #333; margin-bottom: 30px; font-weight: 300; }
         .wire-cta-button-large {
-            padding: 16px 45px;
-            background: white;
-            color: #1e5a8e;
-            border: 2px solid #1e5a8e;
-            font-weight: 600;
-            border-radius: 30px;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 1px;
+            padding: 16px 45px; background: white; color: #1e5a8e;
+            border: 2px solid #1e5a8e; font-weight: 600; border-radius: 30px;
+            cursor: pointer; text-transform: uppercase; font-size: 13px; letter-spacing: 1px;
         }
-        
+
         /* Footer */
-        .wire-footer {
-            background: white;
-            color: #666;
-            padding: 60px 60px 30px;
-            position: relative;
-        }
-        
-        .wire-footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: #e0e0e0;
-        }
-        
-        .wire-footer-content {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 60px;
-            margin-bottom: 40px;
-        }
-        
-        .wire-footer-column {
-            text-align: left;
-        }
-        
-        .wire-footer-title {
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 20px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .wire-footer-link {
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-        
-        .wire-footer-bottom {
-            padding-top: 30px;
-            text-align: center;
-        }
-        
-        .wire-social-icons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        
-        .wire-social-icon {
-            width: 35px;
-            height: 35px;
-            background: #f0f0f0;
-            border-radius: 50%;
-        }
-        
-        .wire-copyright {
-            font-size: 12px;
-            color: #999;
-        }
-        
-        /* Cookie Consent Banner */
+        .wire-footer { background: white; color: #666; padding: 60px 60px 30px; position: relative; }
+        .wire-footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #e0e0e0; }
+        .wire-footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; margin-bottom: 40px; }
+        .wire-footer-title { font-size: 14px; color: #333; margin-bottom: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .wire-footer-link { font-size: 13px; color: #666; margin-bottom: 10px; }
+        .wire-footer-bottom { padding-top: 30px; text-align: center; }
+        .wire-social-icons { display: flex; gap: 15px; justify-content: center; margin-bottom: 20px; }
+        .wire-social-icon { width: 35px; height: 35px; background: #f0f0f0; border-radius: 50%; }
+        .wire-copyright { font-size: 12px; color: #999; }
+
+        /* Cookie */
         .cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #fff;
-            padding: 20px 30px;
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
-            z-index: 9999;
-            display: none;
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: #fff; padding: 20px 30px;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+            z-index: 9999; display: none;
             animation: slideUp 0.4s ease;
         }
-        
-        @keyframes slideUp {
-            from {
-                transform: translateY(100%);
-            }
-            to {
-                transform: translateY(0);
-            }
+        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+        .cookie-banner.show { display: block; }
+        .cookie-content { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+        .cookie-text { flex: 1; font-size: 14px; color: #666; line-height: 1.6; }
+        .cookie-text a { color: #1e5a8e; text-decoration: underline; }
+        .cookie-buttons { display: flex; gap: 15px; flex-shrink: 0; }
+        .cookie-btn { padding: 10px 25px; border-radius: 25px; font-size: 13px; font-weight: 600; cursor: pointer; text-transform: uppercase; border: none; transition: all 0.3s; }
+        .cookie-accept { background: #1e5a8e; color: white; }
+        .cookie-decline { background: white; color: #666; border: 2px solid #ddd; }
+
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); animation: fadeIn 0.3s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .modal-content { background-color: white; margin: 5% auto; padding: 40px; border-radius: 8px; width: 90%; max-width: 600px; position: relative; animation: slideDown 0.3s; }
+        @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .close-modal { position: absolute; right: 20px; top: 20px; font-size: 28px; font-weight: 300; color: #999; cursor: pointer; }
+        .form-title { font-size: 28px; color: #333; margin-bottom: 10px; font-weight: 400; }
+        .form-subtitle { font-size: 14px; color: #666; margin-bottom: 30px; }
+        .form-group { margin-bottom: 20px; }
+        .form-label { display: block; font-size: 13px; color: #333; margin-bottom: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-input, .form-textarea { width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; font-family: inherit; transition: border-color 0.3s; }
+        .form-input:focus, .form-textarea:focus { outline: none; border-color: #1e5a8e; }
+        .form-textarea { resize: vertical; min-height: 100px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-submit { width: 100%; padding: 15px; background: #1e5a8e; color: white; border: none; border-radius: 6px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: background 0.3s; }
+        .form-submit:hover { background: #164a73; }
+
+        /* Tablet */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .wire-hero { flex-direction: column; text-align: center; }
+            .wire-hero-content { max-width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; }
         }
-        
-        .cookie-banner.show {
-            display: block;
-        }
-        
-        .cookie-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-        
-        .cookie-text {
-            flex: 1;
-            font-size: 14px;
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .cookie-text a {
-            color: #1e5a8e;
-            text-decoration: underline;
-        }
-        
-        .cookie-buttons {
-            display: flex;
-            gap: 15px;
-            flex-shrink: 0;
-        }
-        
-        .cookie-btn {
-            padding: 10px 25px;
-            border-radius: 25px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border: none;
-            transition: all 0.3s;
-        }
-        
-        .cookie-accept {
-            background: #1e5a8e;
-            color: white;
-        }
-        
-        .cookie-accept:hover {
-            background: #164a73;
-        }
-        
-        .cookie-decline {
-            background: white;
-            color: #666;
-            border: 2px solid #ddd;
-        }
-        
-        .cookie-decline:hover {
-            border-color: #999;
-        }
-        
-        /* Contact Form Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            animation: fadeIn 0.3s;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 40px;
-            border-radius: 8px;
-            width: 90%;
-            max-width: 600px;
-            position: relative;
-            animation: slideDown 0.3s;
-        }
-        
-        @keyframes slideDown {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        
-        .close-modal {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            font-size: 28px;
-            font-weight: 300;
-            color: #999;
-            cursor: pointer;
-            line-height: 1;
-        }
-        
-        .close-modal:hover {
-            color: #333;
-        }
-        
-        .form-title {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 10px;
-            font-weight: 400;
-        }
-        
-        .form-subtitle {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-label {
-            display: block;
-            font-size: 13px;
-            color: #333;
-            margin-bottom: 8px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .form-input,
-        .form-textarea,
-        .form-select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
-        
-        .form-input:focus,
-        .form-textarea:focus,
-        .form-select:focus {
-            outline: none;
-            border-color: #1e5a8e;
-        }
-        
-        .form-textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        .form-submit {
-            width: 100%;
-            padding: 15px;
-            background: #1e5a8e;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .form-submit:hover {
-            background: #164a73;
-        }
-        
+
+        /* ========================
+           MOBILE
+        ======================== */
         @media (max-width: 768px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            
-            .modal-content {
-                margin: 10% auto;
-                padding: 30px 20px;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .contact-info {
-                padding: 30px 20px;
-            }
-            
-            .map-container {
-                height: 400px;
-            }
-        }
-        
-        @media (max-width: 1024px) {
-            .wire-hero {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .wire-hero-content {
-                max-width: 100%;
-                margin-left: 0;
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .wire-hero-image {
-                margin-top: 40px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .wire-nav {
-                padding: 12px 20px;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                position: fixed;
-                background: #ffffff;
-            }
-            
-            .wire-nav img {
-                height: 80px !important;
-                max-height: 80px;
-            }
-            
-            .hamburger {
-                display: flex;
-                position: absolute;
-                right: 20px;
-            }
-            
-            .wire-menu .wire-cta-button {
-                display: block;
-            }
-            
-            .nav-cta-button {
-                display: none;
-            }
-            
+
+            /* Nav */
+            .wire-nav { padding: 12px 20px; justify-content: center; }
+            .wire-nav img { height: 80px !important; max-height: 80px; }
+            .hamburger { display: flex; position: absolute; right: 20px; }
+            .wire-menu .wire-cta-button { display: block; }
+            .nav-cta-button { display: none; }
             .menu-close {
-                display: block;
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                font-size: 32px;
-                color: #666;
-                cursor: pointer;
-                background: none;
-                border: none;
-                line-height: 1;
-                padding: 5px;
+                display: block; position: absolute; top: 20px; right: 20px;
+                font-size: 32px; color: #666; cursor: pointer;
+                background: none; border: none; line-height: 1; padding: 5px;
             }
-            
-            .menu-close:hover {
-                color: #333;
-            }
-            
             .wire-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                left: auto;
-                transform: none;
-                width: 280px;
-                height: 100vh;
-                background: white;
-                flex-direction: column;
-                padding: 80px 30px 30px;
-                gap: 30px;
+                position: fixed; top: 0; right: -100%; left: auto; transform: none;
+                width: 280px; height: 100vh; background: white;
+                flex-direction: column; padding: 80px 30px 30px; gap: 30px;
                 box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-                transition: right 0.3s ease;
-                z-index: 1000;
-                align-items: flex-start;
+                transition: right 0.3s ease; z-index: 1000; align-items: flex-start;
             }
-            
-            .wire-menu.active {
-                right: 0;
-            }
-            
-            .wire-menu-item {
-                font-size: 18px;
+            .wire-menu.active { right: 0; }
+            .wire-menu-item { font-size: 18px; width: 100%; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+            .wire-cta-button { margin-top: 20px; padding: 12px 30px; font-size: 14px; width: 100%; text-align: center; }
+
+            /* Hide doctor photo */
+            .doctor-container { display: none; }
+
+            /* Hero - tighter */
+            .wire-hero { padding: 100px 20px 25px; flex-direction: column; gap: 0; min-height: unset; }
+            .wire-hero-content { max-width: 100%; text-align: left; display: flex; flex-direction: column; align-items: flex-start; }
+            .wire-title { font-size: 26px; }
+            .wire-text { font-size: 14px; margin-bottom: 12px; }
+
+            /* Call Now button */
+            .call-now-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
                 width: 100%;
-                padding: 10px 0;
-                border-bottom: 1px solid #f0f0f0;
+                padding: 15px;
+                background: #1e5a8e;
+                color: white;
+                border: none;
+                border-radius: 30px;
+                font-size: 16px;
+                font-weight: 600;
+                text-decoration: none;
+                margin-top: 10px;
+                letter-spacing: 0.5px;
             }
-            
-            .wire-cta-button {
-                margin-top: 20px;
-                padding: 12px 30px;
-                font-size: 14px;
-                width: 100%;
-                text-align: center;
-            }
-            
-            .wire-hero {
-                padding: 120px 30px 60px;
-                overflow-x: hidden;
-                max-width: 100vw;
-            }
-            
-            .wire-title {
-                font-size: 28px;
-            }
-            
-            .wire-section,
-            .wire-about,
-            .wire-testimonials,
-            .wire-locations-section,
-            .contact-location-section,
-            .review-section {
-                padding: 60px 30px;
-                overflow-x: hidden;
-                max-width: 100vw;
-            }
-            
-            .wire-cards,
-            .wire-locations,
-            .wire-testimonial-cards,
-            .wire-footer-content {
-                grid-template-columns: 1fr;
-            }
+
+            /* Tighter waves */
+            .wave-decoration { height: 50px; margin: 10px 0; }
+
+            /* Tighter sections */
+            .wire-about { padding: 25px 20px; }
+            .wire-section-title { font-size: 20px; letter-spacing: 1px; margin-bottom: 12px; }
+            .wire-section-text { font-size: 14px; }
+            .wire-section { padding: 25px 20px; }
+            .wire-cards { grid-template-columns: 1fr; gap: 15px; margin-top: 15px; }
+            .wire-card { padding: 20px 15px; }
+            .wire-testimonials { padding: 25px 20px; }
+            .wire-testimonial-cards { grid-template-columns: 1fr; gap: 12px; margin-top: 15px; }
+            .wire-testimonial-card { padding: 20px; }
+            .contact-location-section { padding: 25px 20px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 15px; }
+            .contact-info { padding: 20px; }
+            .map-container { height: 280px; }
+            .review-section { padding: 25px 20px; }
+            .review-header { margin-bottom: 15px; }
+            .review-title { font-size: 22px; }
+            .review-button, .review-link-button { display: block; margin: 8px 0; text-align: center; }
+            .wire-cta-section { padding: 35px 20px; }
+            .wire-cta-title { font-size: 22px; margin-bottom: 15px; }
+            .wire-footer { padding: 25px 20px 15px; }
+            .wire-footer-content { grid-template-columns: 1fr; gap: 15px; }
+            .form-row { grid-template-columns: 1fr; }
+            .modal-content { margin: 10% auto; padding: 30px 20px; }
+            .cookie-content { flex-direction: column; gap: 15px; }
+            .cookie-buttons { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -1105,21 +325,15 @@
         </div>
         <button class="wire-cta-button nav-cta-button" onclick="openModal()">Book Appointment</button>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </div>
     </div>
-    
-    <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
-    
+
     <!-- Hero Section -->
     <div class="wire-hero">
         <div class="wire-hero-content">
-            <div class="google-review">
-                <!-- BLANK SPACE - Insert Golian Audiology Google Review Here Later -->
-            </div>
+            <div class="google-review"></div>
             <div class="wire-tagline">Golian Audiology</div>
             <div class="wire-title">Trusted Audiologist with 15+ Years Experience</div>
             <div class="wire-text">
@@ -1129,7 +343,12 @@
                 With more than 15 years of experience specializing in hearing aids and rehabilitative care, Dr. Armin Golian provides compassionate, personalized solutions using today's most advanced technology. Our goal is simple: help you hear clearly, communicate confidently, and live fully again.
             </div>
             <button class="wire-cta-button hero-cta-button" onclick="openModal()" style="margin-top: 25px;">Book An Appointment</button>
+            <!-- Call Now - mobile only -->
+            <a href="tel:+13106661401" class="call-now-btn">
+                <i class="fas fa-phone"></i> Call Now: (310) 666-1401
+            </a>
         </div>
+        <!-- Doctor photo - desktop only -->
         <div class="doctor-container">
             <div class="doctor-name">Dr. Armin Golian Aud</div>
             <div class="doctor-image-container">
@@ -1137,157 +356,90 @@
             </div>
         </div>
     </div>
-    
-    <!-- Wave Decoration -->
+
+    <!-- Wave -->
     <div class="wave-decoration">
         <svg viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <!-- Multiple layered semi-transparent waves -->
-            <path d="M0 50 Q 200 30, 400 50 T 800 50 T 1200 50" 
-                  stroke="#8ab4f8" 
-                  stroke-width="1" 
-                  fill="none"
-                  opacity="0.15"/>
-            <path d="M0 45 Q 200 25, 400 45 T 800 45 T 1200 45" 
-                  stroke="#6ba3e8" 
-                  stroke-width="1.5" 
-                  fill="none"
-                  opacity="0.2"/>
-            <path d="M0 50 Q 200 35, 400 50 T 800 50 T 1200 50" 
-                  stroke="#4a9fd8" 
-                  stroke-width="1.5" 
-                  fill="none"
-                  opacity="0.25"/>
-            <path d="M0 55 Q 200 40, 400 55 T 800 55 T 1200 55" 
-                  stroke="#3a8fc8" 
-                  stroke-width="1.5" 
-                  fill="none"
-                  opacity="0.3"/>
-            <path d="M0 50 Q 200 32, 400 50 T 800 50 T 1200 50" 
-                  stroke="#2a7fb8" 
-                  stroke-width="2" 
-                  fill="none"
-                  opacity="0.35"/>
-            <path d="M0 52 Q 200 38, 400 52 T 800 52 T 1200 52" 
-                  stroke="#1e5a8e" 
-                  stroke-width="1" 
-                  fill="none"
-                  opacity="0.2"/>
+            <path d="M0 50 Q 200 30, 400 50 T 800 50 T 1200 50" stroke="#8ab4f8" stroke-width="1" fill="none" opacity="0.15"/>
+            <path d="M0 45 Q 200 25, 400 45 T 800 45 T 1200 45" stroke="#6ba3e8" stroke-width="1.5" fill="none" opacity="0.2"/>
+            <path d="M0 50 Q 200 35, 400 50 T 800 50 T 1200 50" stroke="#4a9fd8" stroke-width="1.5" fill="none" opacity="0.25"/>
+            <path d="M0 55 Q 200 40, 400 55 T 800 55 T 1200 55" stroke="#3a8fc8" stroke-width="1.5" fill="none" opacity="0.3"/>
+            <path d="M0 50 Q 200 32, 400 50 T 800 50 T 1200 50" stroke="#2a7fb8" stroke-width="2" fill="none" opacity="0.35"/>
+            <path d="M0 52 Q 200 38, 400 52 T 800 52 T 1200 52" stroke="#1e5a8e" stroke-width="1" fill="none" opacity="0.2"/>
         </svg>
     </div>
-    
-    <!-- About/Doctor Section -->
+
+    <!-- About -->
     <div class="wire-about">
         <div class="wire-section-title">More Than a Clinic: Get to Know the People Who Care for You</div>
         <div class="wire-section-text">
-                            As a leading Audiologist in West Los Angeles we offer expert knowledge and state of the art technology & equipment for a range of treatments tailored to your specific needs. We provide one-on-one hearing counseling, hearing tests, comprehensive evaluations, and concierge audiology services.
+            As a leading Audiologist in West Los Angeles we offer expert knowledge and state of the art technology & equipment for a range of treatments tailored to your specific needs. We provide one-on-one hearing counseling, hearing tests, comprehensive evaluations, and concierge audiology services.
         </div>
     </div>
-    
-    <!-- Services Section -->
+
+    <!-- Services -->
     <div class="wire-section">
         <div style="text-align: center;">
             <div class="wire-section-title">Premium Care Tailored to You</div>
         </div>
-        
         <div class="wire-cards">
             <div class="wire-card">
                 <div class="wire-card-icon"><i class="fas fa-stethoscope" style="font-size: 48px; color: #4285f4;"></i></div>
                 <div class="wire-card-title">Hearing Evaluations</div>
-                <div class="wire-card-text">
-                    We'll run a complete hearing evaluation to figure out exactly what's going on with your hearing. Using advanced testing, we'll identify any hearing loss and create a treatment plan that actually works for your lifestyle.
-                </div>
+                <div class="wire-card-text">We'll run a complete hearing evaluation to figure out exactly what's going on with your hearing. Using advanced testing, we'll identify any hearing loss and create a treatment plan that actually works for your lifestyle.</div>
             </div>
             <div class="wire-card">
                 <div class="wire-card-icon"><i class="fas fa-bell" style="font-size: 48px; color: #4285f4;"></i></div>
                 <div class="wire-card-title">Tinnitus Management</div>
-                <div class="wire-card-text">
-                    Dealing with ringing or buzzing in your ears? You're not alone. We offer proven treatments that can significantly reduce tinnitus symptoms and help you find relief so you can focus on what matters.
-                </div>
+                <div class="wire-card-text">Dealing with ringing or buzzing in your ears? You're not alone. We offer proven treatments that can significantly reduce tinnitus symptoms and help you find relief so you can focus on what matters.</div>
             </div>
             <div class="wire-card">
                 <div class="wire-card-icon"><i class="fas fa-ear-listen" style="font-size: 48px; color: #4285f4;"></i></div>
                 <div class="wire-card-title">Hearing Aids</div>
-                <div class="wire-card-text">
-                    Finding the right hearing aids is a big deal, and we make sure they're perfectly fitted to your needs. From the initial fitting to ongoing adjustments, we'll make sure you're comfortable and hearing clearly.
-                </div>
+                <div class="wire-card-text">Finding the right hearing aids is a big deal, and we make sure they're perfectly fitted to your needs. From the initial fitting to ongoing adjustments, we'll make sure you're comfortable and hearing clearly.</div>
             </div>
         </div>
     </div>
-    
-    <!-- Wave Decoration 2 -->
+
+    <!-- Wave 2 -->
     <div class="wave-decoration">
         <svg viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <!-- Multiple layered semi-transparent waves -->
-            <path d="M0 50 Q 200 30, 400 50 T 800 50 T 1200 50" 
-                  stroke="#8ab4f8" 
-                  stroke-width="1" 
-                  fill="none"
-                  opacity="0.15"/>
-            <path d="M0 45 Q 200 25, 400 45 T 800 45 T 1200 45" 
-                  stroke="#6ba3e8" 
-                  stroke-width="1.5" 
-                  fill="none"
-                  opacity="0.2"/>
-            <path d="M0 50 Q 200 35, 400 50 T 800 50 T 1200 50" 
-                  stroke="#4a9fd8" 
-                  stroke-width="1.5" 
-                  fill="none"
-                  opacity="0.25"/>
-            <path d="M0 55 Q 200 40, 400 55 T 800 55 T 1200 55" 
-                  stroke="#3a8fc8" 
-                  stroke-width="1.5" 
-                  fill="none"
-                  opacity="0.3"/>
-            <path d="M0 50 Q 200 32, 400 50 T 800 50 T 1200 50" 
-                  stroke="#2a7fb8" 
-                  stroke-width="2" 
-                  fill="none"
-                  opacity="0.35"/>
-            <path d="M0 52 Q 200 38, 400 52 T 800 52 T 1200 52" 
-                  stroke="#1e5a8e" 
-                  stroke-width="1" 
-                  fill="none"
-                  opacity="0.2"/>
+            <path d="M0 50 Q 200 30, 400 50 T 800 50 T 1200 50" stroke="#8ab4f8" stroke-width="1" fill="none" opacity="0.15"/>
+            <path d="M0 45 Q 200 25, 400 45 T 800 45 T 1200 45" stroke="#6ba3e8" stroke-width="1.5" fill="none" opacity="0.2"/>
+            <path d="M0 50 Q 200 35, 400 50 T 800 50 T 1200 50" stroke="#4a9fd8" stroke-width="1.5" fill="none" opacity="0.25"/>
+            <path d="M0 55 Q 200 40, 400 55 T 800 55 T 1200 55" stroke="#3a8fc8" stroke-width="1.5" fill="none" opacity="0.3"/>
+            <path d="M0 50 Q 200 32, 400 50 T 800 50 T 1200 50" stroke="#2a7fb8" stroke-width="2" fill="none" opacity="0.35"/>
+            <path d="M0 52 Q 200 38, 400 52 T 800 52 T 1200 52" stroke="#1e5a8e" stroke-width="1" fill="none" opacity="0.2"/>
         </svg>
     </div>
-    
-    <!-- Testimonials Section -->
+
+    <!-- Testimonials -->
     <div class="wire-testimonials">
         <div class="wire-section-title">What Our Patients Say</div>
-        
         <div class="wire-testimonial-cards">
             <div class="wire-testimonial-card">
-                <div class="wire-quote">
-                    "I've been to several audiologists over the years, but Dr. Golian's approach is different. He takes the time to explain everything and never makes you feel rushed. My hearing aids work perfectly and the follow-up care has been outstanding."
-                </div>
+                <div class="wire-quote">"I've been to several audiologists over the years, but Dr. Golian's approach is different. He takes the time to explain everything and never makes you feel rushed. My hearing aids work perfectly and the follow-up care has been outstanding."</div>
                 <div class="wire-author">Robert K.</div>
             </div>
             <div class="wire-testimonial-card">
-                <div class="wire-quote">
-                    "After years of struggling with hearing loss, I finally decided to get help. The team at Golian Audiology made the entire process comfortable and easy. I wish I hadn't waited so long - what a difference it's made in my daily life!"
-                </div>
+                <div class="wire-quote">"After years of struggling with hearing loss, I finally decided to get help. The team at Golian Audiology made the entire process comfortable and easy. I wish I hadn't waited so long - what a difference it's made in my daily life!"</div>
                 <div class="wire-author">Jennifer M.</div>
             </div>
             <div class="wire-testimonial-card">
-                <div class="wire-quote">
-                    "Professional, knowledgeable, and genuinely caring. Dr. Golian found the perfect solution for my tinnitus issues. The relief has been life-changing. I highly recommend this practice to anyone experiencing hearing challenges."
-                </div>
+                <div class="wire-quote">"Professional, knowledgeable, and genuinely caring. Dr. Golian found the perfect solution for my tinnitus issues. The relief has been life-changing. I highly recommend this practice to anyone experiencing hearing challenges."</div>
                 <div class="wire-author">David L.</div>
             </div>
         </div>
     </div>
-    
-    <!-- Contact & Location Section -->
+
+    <!-- Contact & Location -->
     <div class="contact-location-section">
         <div class="contact-grid">
             <div class="contact-info">
                 <h2 class="contact-title">Visit Our Office</h2>
                 <div class="contact-item">
                     <div class="contact-label">Address</div>
-                    <div class="contact-text">
-                        1444 S Carmelina Ave Suite 133<br>
-                        Los Angeles, CA 90025
-                    </div>
+                    <div class="contact-text">1444 S Carmelina Ave Suite 133<br>Los Angeles, CA 90025</div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-label">Phone</div>
@@ -1295,68 +447,48 @@
                 </div>
                 <div class="contact-item">
                     <div class="contact-label">Office Hours</div>
-                    <div class="contact-text">
-                        Monday - Friday: 10:00am – 5:00pm<br>
-                        Saturday: By Appointment<br>
-                        Sunday: Closed
-                    </div>
+                    <div class="contact-text">Monday - Friday: 10:00am – 5:00pm<br>Saturday: By Appointment<br>Sunday: Closed</div>
                 </div>
             </div>
             <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.0227784445835!2d-118.4657!3d34.0422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bb5b5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2s1444%20S%20Carmelina%20Ave%20Suite%20133%2C%20Los%20Angeles%2C%20CA%2090025!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-                    style="border:0; width: 100%; height: 100%;"
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.0227784445835!2d-118.4657!3d34.0422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bb5b5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2s1444%20S%20Carmelina%20Ave%20Suite%20133%2C%20Los%20Angeles%2C%20CA%2090025!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                    style="border:0; width: 100%; height: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         </div>
     </div>
-    
-    <!-- Google Reviews Section -->
+
+    <!-- Google Reviews -->
     <div class="review-section">
         <div class="review-header">
             <h2 class="review-title">What Our Patients Are Saying</h2>
             <p class="review-text">See our reviews on Google</p>
         </div>
         <div class="google-reviews-embed">
-            <!-- Google Reviews Widget -->
             <div style="text-align: center; padding: 40px 20px; background: #f9f9f9; border-radius: 8px;">
-                <div style="margin-bottom: 20px;">
-                    <span style="font-size: 48px; color: #fbbc04;">★★★★★</span>
-                </div>
+                <div style="margin-bottom: 20px;"><span style="font-size: 48px; color: #fbbc04;">★★★★★</span></div>
                 <p style="font-size: 18px; color: #333; margin-bottom: 10px;">Rated 5.0 Stars on Google</p>
                 <p style="font-size: 14px; color: #666; margin-bottom: 25px;">Based on patient reviews</p>
-                <a href="https://www.google.com/search?q=golian+audiology#lrd=0x80c2bbca9d14188b:0x74ff8ff9d6aa2315,1" 
-                   target="_blank" 
+                <a href="https://www.google.com/search?q=golian+audiology#lrd=0x80c2bbca9d14188b:0x74ff8ff9d6aa2315,1" target="_blank"
                    style="display: inline-block; padding: 12px 30px; background: #4285f4; color: white; text-decoration: none; border-radius: 4px; font-weight: 500;">
                     Read Our Google Reviews
                 </a>
             </div>
         </div>
         <div style="margin-top: 30px;">
-            <a href="https://www.google.com/search?q=golian+audiology&rlz=1C1RXMK_enUS1039US1039&oq=golian+audiology+&gs_lcrp=EgZjaHJvbWUyDAgAEEUYORiABBiiBDIKCAEQABiABBiiBDIKCAIQABiABBiiBDIKCAMQABiiBBiJBTIKCAQQABiiBBiJBTIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDYxMjdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x80c2bbca9d14188b:0x74ff8ff9d6aa2315,1,,,," 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="review-link-button">
-                View All Reviews on Google
-            </a>
-            <a href="https://www.google.com/search?q=golian+audiology&rlz=1C1RXMK_enUS1039US1039&oq=golian+audiology+&gs_lcrp=EgZjaHJvbWUyDAgAEEUYORiABBiiBDIKCAEQABiABBiiBDIKCAIQABiABBiiBDIKCAMQABiiBBiJBTIKCAQQABiiBBiJBTIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDYxMjdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x80c2bbca9d14188b:0x74ff8ff9d6aa2315,3,,,," 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="review-button">
-                Leave a Review
-            </a>
+            <a href="https://www.google.com/search?q=golian+audiology&sourceid=chrome&ie=UTF-8#lrd=0x80c2bbca9d14188b:0x74ff8ff9d6aa2315,1,,,,"
+               target="_blank" rel="noopener noreferrer" class="review-link-button">View All Reviews on Google</a>
+            <a href="https://www.google.com/search?q=golian+audiology&sourceid=chrome&ie=UTF-8#lrd=0x80c2bbca9d14188b:0x74ff8ff9d6aa2315,3,,,,"
+               target="_blank" rel="noopener noreferrer" class="review-button">Leave a Review</a>
         </div>
     </div>
-    
-    <!-- CTA Section -->
+
+    <!-- CTA -->
     <div class="wire-cta-section">
         <div class="wire-cta-title">Ready to talk?</div>
         <button class="wire-cta-button-large" onclick="openModal()">Book An Appointment</button>
     </div>
-    
+
     <!-- Footer -->
     <div class="wire-footer">
         <div class="wire-footer-content">
@@ -1378,7 +510,6 @@
                 <a href="terms-of-service.html" class="wire-footer-link">Terms of Service</a>
             </div>
         </div>
-        
         <div class="wire-footer-bottom">
             <div class="wire-social-icons">
                 <div class="wire-social-icon"></div>
@@ -1388,22 +519,15 @@
             <div class="wire-copyright">© 2025 Golian Audiology. All rights reserved.</div>
         </div>
     </div>
-    
-    <!-- Contact Form Modal -->
+
+    <!-- Modal -->
     <div id="contactModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h2 class="form-title">Book An Appointment</h2>
             <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
-            
             <form id="appointmentForm" action="https://formspree.io/f/meelqadj" method="POST">
-                <!-- Formspree will handle submissions -->
-                
-                <!-- Honeypot field for spam protection (hidden from users) -->
-                <p style="display:none;">
-                    <label>Don't fill this out if you're human: <input name="_gotcha" /></label>
-                </p>
-                
+                <p style="display:none;"><label>Don't fill this out if you're human: <input name="_gotcha" /></label></p>
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label">First Name *</label>
@@ -1414,27 +538,24 @@
                         <input type="text" name="lastName" class="form-input" required>
                     </div>
                 </div>
-                
                 <div class="form-group">
                     <label class="form-label">Phone *</label>
                     <input type="tel" name="phone" class="form-input" required>
                 </div>
-                
                 <div class="form-group">
                     <label class="form-label">Message</label>
                     <textarea name="message" class="form-textarea" placeholder="Tell us about your hearing concerns or any questions you have..."></textarea>
                 </div>
-                
                 <button type="submit" class="form-submit">Submit Appointment Request</button>
             </form>
         </div>
     </div>
-    
-    <!-- Cookie Consent Banner -->
+
+    <!-- Cookie Banner -->
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-content">
             <div class="cookie-text">
-                We use cookies to enhance your experience on our website. By continuing to browse, you agree to our use of cookies. 
+                We use cookies to enhance your experience on our website. By continuing to browse, you agree to our use of cookies.
                 Learn more in our <a href="privacy-policy.html">Privacy Policy</a>.
             </div>
             <div class="cookie-buttons">
@@ -1443,98 +564,39 @@
             </div>
         </div>
     </div>
-    
+
     <script>
-        // Hamburger Menu Toggle
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             const hamburger = document.getElementById('hamburger');
             const overlay = document.getElementById('menuOverlay');
-            
             menu.classList.toggle('active');
             hamburger.classList.toggle('active');
             overlay.classList.toggle('active');
-            
-            if (menu.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
         }
-        
         function openModal() {
             document.getElementById('contactModal').style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
-        
         function closeModal() {
             document.getElementById('contactModal').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
-        
         window.onclick = function(event) {
-            const modal = document.getElementById('contactModal');
-            if (event.target == modal) {
-                closeModal();
-            }
+            if (event.target == document.getElementById('contactModal')) closeModal();
         }
-        
-        function handleSubmit(event) {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            const submitBtn = form.querySelector('.form-submit');
-            
-            // Show loading state
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            // Submit to Netlify
-            fetch('/', {
-                method: 'POST',
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Thank you! Your appointment request has been submitted. We will contact you within 24 hours.');
-                    closeModal();
-                    form.reset();
-                } else {
-                    throw new Error('Form submission failed');
-                }
-                submitBtn.textContent = 'Submit Appointment Request';
-                submitBtn.disabled = false;
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                alert('Oops! There was a problem. Please call us at (310) 666-1401.');
-                submitBtn.textContent = 'Submit Appointment Request';
-                submitBtn.disabled = false;
-            });
-            
-            return false;
-        }
-        
-        // Cookie Consent Functions
         function checkCookieConsent() {
-            const consent = localStorage.getItem('cookieConsent');
-            if (!consent) {
-                document.getElementById('cookieBanner').classList.add('show');
-            }
+            if (!localStorage.getItem('cookieConsent')) document.getElementById('cookieBanner').classList.add('show');
         }
-        
         function acceptCookies() {
             localStorage.setItem('cookieConsent', 'accepted');
             document.getElementById('cookieBanner').classList.remove('show');
         }
-        
         function declineCookies() {
             localStorage.setItem('cookieConsent', 'declined');
             document.getElementById('cookieBanner').classList.remove('show');
         }
-        
-        // Check cookie consent on page load
         window.addEventListener('load', checkCookieConsent);
     </script>
 </body>
