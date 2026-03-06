@@ -13,902 +13,178 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            overflow-x: hidden;
-            width: 100%;
-            max-width: 100%;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { overflow-x: hidden; width: 100%; max-width: 100%; }
         body {
             font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: white;
-            overflow-x: hidden;
-            width: 100%;
-            max-width: 100vw;
-            position: relative;
+            background: white; overflow-x: hidden; width: 100%; max-width: 100vw; position: relative;
         }
-        
+
         /* Navigation */
-        .wire-nav {
-            background: #fff;
-            padding: 8px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            box-shadow: none;
-            width: 100%;
-        }
-        
-        .wire-logo {
-            font-size: 20px;
-            font-weight: 400;
-            letter-spacing: 1px;
-            color: #333;
-            text-decoration: none;
-        }
-        
-        .wire-menu {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-        
-        .wire-menu .wire-cta-button {
-            display: none;
-        }
-        
-        .nav-cta-button {
-            display: block;
-        }
-        
-        .wire-menu-item {
-            font-size: 16px;
-            color: #1e5a8e;
-            font-weight: 500;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        
-        .wire-menu-item:hover {
-            color: #1e5a8e;
-            text-decoration: none;
-        }
-        
-        .wire-cta-button {
-            padding: 10px 28px;
-            background: white;
-            color: #1e5a8e;
-            border: 2px solid #1e5a8e;
-            font-weight: 600;
-            border-radius: 25px;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-        
-        .wire-cta-button:hover {
-            background: #1e5a8e;
-            color: white;
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(30, 90, 142, 0.3);
-        }
-        
-        .wire-cta-button:active {
-            transform: scale(0.98);
-        }
-        
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 5px;
-        }
-        
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            margin: 3px 0;
-            transition: 0.3s;
-            border-radius: 3px;
-        }
-        
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-        
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-        
-        .mobile-menu-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-        
-        .mobile-menu-overlay.active {
-            display: block;
-        }
-        
-        .menu-close {
-            display: none;
-        }
-        
-        @media (min-width: 769px) {
-            .wire-cta-button {
-                padding: 15px 38px;
-                font-size: 14px;
-            }
-        }
-        
+        .wire-nav { background: #fff; padding: 8px 60px; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; width: 100%; }
+        .wire-logo { font-size: 20px; font-weight: 400; letter-spacing: 1px; color: #333; text-decoration: none; }
+        .wire-menu { position: absolute; left: 50%; transform: translateX(-50%); display: flex; gap: 30px; align-items: center; }
+        .wire-menu .wire-cta-button { display: none; }
+        .nav-cta-button { display: block; }
+        .wire-menu-item { font-size: 16px; color: #1e5a8e; font-weight: 500; cursor: pointer; text-decoration: none; }
+        .wire-cta-button { padding: 10px 28px; background: white; color: #1e5a8e; border: 2px solid #1e5a8e; font-weight: 600; border-radius: 25px; cursor: pointer; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; transition: all 0.3s ease; }
+        .wire-cta-button:hover { background: #1e5a8e; color: white; transform: scale(1.05); box-shadow: 0 4px 15px rgba(30,90,142,0.3); }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; padding: 5px; }
+        .hamburger span { width: 25px; height: 3px; background: #333; margin: 3px 0; transition: 0.3s; border-radius: 3px; }
+        .hamburger.active span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+        .mobile-menu-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999; }
+        .mobile-menu-overlay.active { display: block; }
+        .menu-close { display: none; }
+        @media (min-width: 769px) { .wire-cta-button { padding: 15px 38px; font-size: 14px; } }
+
         /* Page Hero */
-        .page-hero {
-            padding: 120px 60px 60px;
-            background: white;
-            text-align: center;
-        }
-        
-        .page-title {
-            font-size: 52px;
-            color: #333;
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-        
-        .page-subtitle {
-            font-size: 18px;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        /* Wave Decoration */
-        .wave-decoration {
-            width: 100%;
-            height: 100px;
-            position: relative;
-            margin: 40px 0;
-        }
-        
-        .wave-decoration svg {
-            width: 100%;
-            height: 100%;
-            filter: blur(0.5px);
-        }
-        
-        /* Doctor Profile Section */
-        .doctor-profile {
-            padding: 80px 60px;
-            background: white;
-        }
-        
-        .profile-container {
-            display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: 80px;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: start;
-        }
-        
-        .doctor-image-container {
-            position: sticky;
-            top: 40px;
-        }
-        
-        .doctor-image {
-            width: 100%;
-            height: 500px;
-            background: #f5f5f5;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-        
-        .doctor-name {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 5px;
-            font-weight: 400;
-        }
-        
-        .doctor-title {
-            font-size: 16px;
-            color: #1e5a8e;
-            font-weight: 500;
-        }
-        
-        .doctor-bio h2 {
-            font-size: 32px;
-            color: #333;
-            margin-bottom: 25px;
-            font-weight: 400;
-        }
-        
-        .doctor-bio p {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        
-        .credentials {
-            background: #f9f9f9;
-            padding: 30px;
-            border-radius: 8px;
-            margin: 40px 0;
-        }
-        
-        .credentials h3 {
-            font-size: 20px;
-            color: #333;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-        
-        .credential-item {
-            margin-bottom: 15px;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .credential-item::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #1e5a8e;
-            font-size: 24px;
-            line-height: 1;
-        }
-        
-        .credential-degree {
-            font-size: 16px;
-            color: #333;
-            font-weight: 600;
-            display: block;
-        }
-        
-        .credential-school {
-            font-size: 15px;
-            color: #666;
-            display: block;
-            margin-top: 3px;
-        }
-        
-        /* Mission Section */
-        .mission-section {
-            padding: 80px 60px;
-            background: #f9f9f9;
-            text-align: center;
-        }
-        
-        .mission-title {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-        
-        .mission-text {
-            font-size: 18px;
-            color: #666;
-            max-width: 900px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-        
-        /* Values Section */
-        .values-section {
-            padding: 80px 60px;
-            background: white;
-        }
-        
-        .section-title {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 50px;
-            text-align: center;
-            font-weight: 300;
-        }
-        
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .value-item {
-            text-align: center;
-        }
-        
-        .value-icon {
-            width: 80px;
-            height: 80px;
-            background: #f5f5f5;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #1e5a8e;
-            font-size: 32px;
-            font-weight: bold;
-        }
-        
-        .value-title {
-            font-size: 20px;
-            color: #333;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        
-        .value-text {
-            font-size: 15px;
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 60px;
-            background: white;
-            text-align: center;
-        }
-        
-        .cta-title {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-        
-        .cta-text {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        
-        .cta-button-large {
-            padding: 16px 45px;
-            background: white;
-            color: #1e5a8e;
-            border: 2px solid #1e5a8e;
-            font-weight: 600;
-            border-radius: 30px;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 1px;
-        }
-        
-        /* Contact & Location Section */
-        .contact-location-section {
-            padding: 80px 60px;
-            background: #f9f9f9;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .contact-info {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-        }
-        
-        .contact-title {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 30px;
-            font-weight: 400;
-        }
-        
-        .contact-item {
-            margin-bottom: 25px;
-        }
-        
-        .contact-label {
-            font-size: 12px;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .contact-text {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .map-container {
-            width: 100%;
-            height: 500px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
+        .page-hero { padding: 100px 60px 15px; background: white; text-align: center; }
+        .page-title { font-size: 48px; color: #333; margin-bottom: 15px; font-weight: 300; }
+
+        /* Wave */
+        .wave-decoration { width: 100%; height: 35px; position: relative; margin: 5px 0; }
+        .wave-decoration svg { width: 100%; height: 100%; filter: blur(0.5px); }
+
+        /* Doctor Profile */
+        .doctor-profile { padding: 40px 60px; background: white; }
+        .profile-container { display: grid; grid-template-columns: 360px 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: start; }
+        .doctor-image-container { position: sticky; top: 40px; }
+        .doctor-image { width: 100%; height: 450px; background: #f5f5f5; border-radius: 8px; margin-bottom: 15px; overflow: hidden; }
+        .doctor-name { font-size: 24px; color: #333; margin-bottom: 4px; font-weight: 400; }
+        .doctor-title { font-size: 15px; color: #1e5a8e; font-weight: 500; }
+        .doctor-bio h2 { font-size: 28px; color: #333; margin-bottom: 20px; font-weight: 400; }
+        .doctor-bio p { font-size: 15px; color: #666; line-height: 1.8; margin-bottom: 16px; }
+        .credentials { background: #f9f9f9; padding: 25px; border-radius: 8px; margin: 25px 0; }
+        .credentials h3 { font-size: 18px; color: #333; margin-bottom: 15px; font-weight: 500; }
+        .credential-item { margin-bottom: 12px; padding-left: 20px; position: relative; }
+        .credential-item::before { content: "•"; position: absolute; left: 0; color: #1e5a8e; font-size: 20px; line-height: 1; }
+        .credential-degree { font-size: 15px; color: #333; font-weight: 600; display: block; }
+        .credential-school { font-size: 14px; color: #666; display: block; margin-top: 2px; }
+
+        /* Mission */
+        .mission-section { padding: 40px 60px; background: #f9f9f9; text-align: center; }
+        .mission-title { font-size: 30px; color: #333; margin-bottom: 20px; font-weight: 300; }
+        .mission-text { font-size: 16px; color: #666; max-width: 900px; margin: 0 auto; line-height: 1.8; }
+
+        /* Values */
+        .values-section { padding: 40px 60px; background: white; }
+        .section-title { font-size: 30px; color: #333; margin-bottom: 35px; text-align: center; font-weight: 300; }
+        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .value-item { text-align: center; }
+        .value-icon { width: 70px; height: 70px; background: #f5f5f5; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: #1e5a8e; font-size: 28px; font-weight: bold; }
+        .value-title { font-size: 18px; color: #333; margin-bottom: 12px; font-weight: 500; }
+        .value-text { font-size: 14px; color: #666; line-height: 1.6; }
+
+        /* CTA */
+        .cta-section { padding: 50px 60px; background: white; text-align: center; }
+        .cta-title { font-size: 32px; color: #333; margin-bottom: 15px; font-weight: 300; }
+        .cta-text { font-size: 15px; color: #666; margin-bottom: 25px; }
+        .cta-button-large { padding: 16px 45px; background: white; color: #1e5a8e; border: 2px solid #1e5a8e; font-weight: 600; border-radius: 30px; cursor: pointer; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
+
+        /* Contact */
+        .contact-location-section { padding: 40px 60px; background: #f9f9f9; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .contact-info { background: white; padding: 35px; border-radius: 8px; }
+        .contact-title { font-size: 24px; color: #333; margin-bottom: 20px; font-weight: 400; }
+        .contact-item { margin-bottom: 18px; }
+        .contact-label { font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; font-weight: 600; }
+        .contact-text { font-size: 15px; color: #666; line-height: 1.6; }
+        .map-container { width: 100%; height: 420px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+
         /* Footer */
-        .wire-footer {
-            background: white;
-            color: #666;
-            padding: 60px 60px 30px;
-            position: relative;
-        }
-        
-        .wire-footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: #e0e0e0;
-        }
-        
-        .wire-footer-content {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 60px;
-            margin-bottom: 40px;
-        }
-        
-        .wire-footer-column {
-            text-align: left;
-        }
-        
-        .wire-footer-title {
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 20px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .wire-footer-link {
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
-        
-        .wire-footer-bottom {
-            padding-top: 30px;
-            text-align: center;
-        }
-        
-        .wire-social-icons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        
-        .wire-social-icon {
-            width: 35px;
-            height: 35px;
-            background: #f0f0f0;
-            border-radius: 50%;
-        }
-        
-        .wire-copyright {
-            font-size: 12px;
-            color: #999;
-        }
-        
-        /* Cookie Consent Banner */
-        .cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #fff;
-            padding: 20px 30px;
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
-            z-index: 9999;
-            display: none;
-            animation: slideUp 0.4s ease;
-        }
-        
-        @keyframes slideUp {
-            from {
-                transform: translateY(100%);
-            }
-            to {
-                transform: translateY(0);
-            }
-        }
-        
-        .cookie-banner.show {
-            display: block;
-        }
-        
-        .cookie-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-        
-        .cookie-text {
-            flex: 1;
-            font-size: 14px;
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .cookie-text a {
-            color: #1e5a8e;
-            text-decoration: underline;
-        }
-        
-        .cookie-buttons {
-            display: flex;
-            gap: 15px;
-            flex-shrink: 0;
-        }
-        
-        .cookie-btn {
-            padding: 10px 25px;
-            border-radius: 25px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border: none;
-            transition: all 0.3s;
-        }
-        
-        .cookie-accept {
-            background: #1e5a8e;
-            color: white;
-        }
-        
-        .cookie-accept:hover {
-            background: #164a73;
-        }
-        
-        .cookie-decline {
-            background: white;
-            color: #666;
-            border: 2px solid #ddd;
-        }
-        
-        .cookie-decline:hover {
-            border-color: #999;
-        }
-        
+        .wire-footer { background: white; color: #666; padding: 40px 60px 25px; position: relative; }
+        .wire-footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #e0e0e0; }
+        .wire-footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 25px; }
+        .wire-footer-title { font-size: 14px; color: #333; margin-bottom: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .wire-footer-link { font-size: 13px; color: #666; margin-bottom: 8px; display: block; text-decoration: none; }
+        .wire-footer-bottom { padding-top: 20px; text-align: center; }
+        .wire-social-icons { display: flex; gap: 15px; justify-content: center; margin-bottom: 15px; }
+        .wire-social-icon { width: 35px; height: 35px; background: #f0f0f0; border-radius: 50%; }
+        .wire-copyright { font-size: 12px; color: #999; }
+
+        /* Cookie */
+        .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 20px 30px; box-shadow: 0 -4px 12px rgba(0,0,0,0.15); z-index: 9999; display: none; animation: slideUp 0.4s ease; }
+        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+        .cookie-banner.show { display: block; }
+        .cookie-content { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+        .cookie-text { flex: 1; font-size: 14px; color: #666; line-height: 1.6; }
+        .cookie-text a { color: #1e5a8e; text-decoration: underline; }
+        .cookie-buttons { display: flex; gap: 15px; flex-shrink: 0; }
+        .cookie-btn { padding: 10px 25px; border-radius: 25px; font-size: 13px; font-weight: 600; cursor: pointer; text-transform: uppercase; border: none; transition: all 0.3s; }
+        .cookie-accept { background: #1e5a8e; color: white; }
+        .cookie-decline { background: white; color: #666; border: 2px solid #ddd; }
+
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); animation: fadeIn 0.3s; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .modal-content { background-color: white; margin: 5% auto; padding: 40px; border-radius: 8px; width: 90%; max-width: 600px; position: relative; animation: slideDown 0.3s; max-height: 90vh; overflow-y: auto; }
+        @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .close-modal { position: absolute; right: 20px; top: 20px; font-size: 28px; font-weight: 300; color: #999; cursor: pointer; }
+        .form-title { font-size: 28px; color: #333; margin-bottom: 10px; font-weight: 400; }
+        .form-subtitle { font-size: 14px; color: #666; margin-bottom: 30px; }
+        .form-group { margin-bottom: 20px; }
+        .form-label { display: block; font-size: 13px; color: #333; margin-bottom: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-input, .form-textarea { width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; font-family: inherit; transition: border-color 0.3s; }
+        .form-input:focus, .form-textarea:focus { outline: none; border-color: #1e5a8e; }
+        .form-textarea { resize: vertical; min-height: 100px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-submit { width: 100%; padding: 15px; background: #1e5a8e; color: white; border: none; border-radius: 6px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: background 0.3s; }
+        .form-submit:hover { background: #164a73; }
+
+        /* ========================
+           MOBILE
+        ======================== */
         @media (max-width: 768px) {
-            .cookie-content {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .cookie-buttons {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-        
-        /* Contact Form Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            animation: fadeIn 0.3s;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 40px;
-            border-radius: 8px;
-            width: 90%;
-            max-width: 600px;
-            position: relative;
-            animation: slideDown 0.3s;
-            max-height: 90vh;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        @keyframes slideDown {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        
-        .close-modal {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            font-size: 28px;
-            font-weight: 300;
-            color: #999;
-            cursor: pointer;
-            line-height: 1;
-        }
-        
-        .close-modal:hover {
-            color: #333;
-        }
-        
-        .form-title {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 10px;
-            font-weight: 400;
-        }
-        
-        .form-subtitle {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-label {
-            display: block;
-            font-size: 13px;
-            color: #333;
-            margin-bottom: 8px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .form-input,
-        .form-textarea,
-        .form-select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
-        
-        .form-input:focus,
-        .form-textarea:focus,
-        .form-select:focus {
-            outline: none;
-            border-color: #1e5a8e;
-        }
-        
-        .form-textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        .form-submit {
-            width: 100%;
-            padding: 15px;
-            background: #1e5a8e;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .form-submit:hover {
-            background: #164a73;
-        }
-        
-        @media (max-width: 768px) {
-            .wire-nav {
-                padding: 12px 20px;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                position: fixed;
-                background: #ffffff;
-            }
-            
-            .wire-nav img {
-                height: 80px !important;
-                max-height: 80px;
-            }
-            
-            .hamburger {
-                display: flex;
-                position: absolute;
-                right: 20px;
-            }
-            
-            .wire-menu .wire-cta-button {
-                display: block;
-            }
-            
-            .nav-cta-button {
-                display: none;
-            }
-            
-            .menu-close {
-                display: block;
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                font-size: 32px;
-                color: #666;
-                cursor: pointer;
-                background: none;
-                border: none;
-                line-height: 1;
-                padding: 5px;
-            }
-            
-            .menu-close:hover {
-                color: #333;
-            }
-            
-            .wire-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                left: auto;
-                transform: none;
-                width: 280px;
-                height: 100vh;
-                background: white;
-                flex-direction: column;
-                padding: 80px 30px 30px;
-                gap: 30px;
-                box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-                transition: right 0.3s ease;
-                z-index: 1000;
-                align-items: flex-start;
-            }
-            
-            .wire-menu.active {
-                right: 0;
-            }
-            
-            .wire-menu-item {
-                font-size: 18px;
-                width: 100%;
-                padding: 10px 0;
-                border-bottom: 1px solid #f0f0f0;
-            }
-            
-            .wire-cta-button {
-                margin-top: 20px;
-                padding: 12px 30px;
-                font-size: 14px;
-                width: 100%;
-                text-align: center;
-            }
-            
-            .page-hero {
-                padding: 120px 30px 40px;
-            }
-            
-            .page-title {
-                font-size: 36px;
-            }
-            
-            .doctor-profile {
-                padding: 60px 30px;
-            }
-            
-            .profile-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .doctor-image-container {
-                position: static;
-            }
-            
-            .doctor-image {
-                height: 400px;
-            }
-            
-            .values-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .map-container {
-                height: 400px;
-            }
-            
-            .wire-footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            
-            .modal {
-                padding: 0;
-            }
-            
-            .modal-content {
-                margin: 0;
-                padding: 30px 20px;
-                width: 100%;
-                max-width: 100%;
-                min-height: 100vh;
-                border-radius: 0;
-                position: relative;
-            }
+            .wire-nav { padding: 12px 20px; justify-content: center; }
+            .wire-nav img { height: 80px !important; max-height: 80px; }
+            .hamburger { display: flex; position: absolute; right: 20px; }
+            .wire-menu .wire-cta-button { display: block; }
+            .nav-cta-button { display: none; }
+            .menu-close { display: block; position: absolute; top: 20px; right: 20px; font-size: 32px; color: #666; cursor: pointer; background: none; border: none; line-height: 1; padding: 5px; }
+            .wire-menu { position: fixed; top: 0; right: -100%; left: auto; transform: none; width: 280px; height: 100vh; background: white; flex-direction: column; padding: 80px 30px 30px; gap: 30px; box-shadow: -2px 0 10px rgba(0,0,0,0.1); transition: right 0.3s ease; z-index: 1000; align-items: flex-start; }
+            .wire-menu.active { right: 0; }
+            .wire-menu-item { font-size: 18px; width: 100%; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+            .wire-cta-button { margin-top: 20px; padding: 12px 30px; font-size: 14px; width: 100%; text-align: center; }
+
+            .page-hero { padding: 100px 20px 20px; }
+            .page-title { font-size: 32px; }
+
+            .wave-decoration { height: 30px; margin: 5px 0; }
+
+            .doctor-profile { padding: 25px 20px; }
+            .profile-container { grid-template-columns: 1fr; gap: 25px; }
+            .doctor-image-container { position: static; }
+            .doctor-image { height: 320px; }
+            .doctor-bio h2 { font-size: 22px; margin-bottom: 15px; }
+            .doctor-bio p { font-size: 14px; margin-bottom: 12px; }
+            .credentials { padding: 20px; margin: 18px 0; }
+
+            .mission-section { padding: 25px 20px; }
+            .mission-title { font-size: 24px; margin-bottom: 15px; }
+            .mission-text { font-size: 14px; }
+
+            .values-section { padding: 25px 20px; }
+            .section-title { font-size: 22px; margin-bottom: 20px; }
+            .values-grid { grid-template-columns: 1fr; gap: 20px; }
+
+            .cta-section { padding: 30px 20px; }
+            .cta-title { font-size: 24px; margin-bottom: 12px; }
+            .cta-text { font-size: 14px; margin-bottom: 18px; }
+
+            .contact-location-section { padding: 25px 20px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 15px; }
+            .contact-info { padding: 20px; }
+            .map-container { height: 280px; }
+
+            .wire-footer { padding: 25px 20px 15px; }
+            .wire-footer-content { grid-template-columns: 1fr; gap: 15px; }
+
+            .form-row { grid-template-columns: 1fr; }
+            .modal-content { margin: 0; padding: 30px 20px; width: 100%; max-width: 100%; min-height: 100vh; border-radius: 0; }
+            .cookie-content { flex-direction: column; gap: 15px; }
+            .cookie-buttons { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -928,57 +204,29 @@
         </div>
         <button class="wire-cta-button nav-cta-button" onclick="openModal()">Book Appointment</button>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </div>
     </div>
-    
-    <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
-    
+
     <!-- Page Hero -->
     <div class="page-hero">
         <h1 class="page-title">About Us</h1>
     </div>
-    
-    <!-- Wave Decoration -->
+
+    <!-- Wave -->
     <div class="wave-decoration">
         <svg viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0 50 Q 200 30, 400 50 T 800 50 T 1200 50" 
-                  stroke="#8ab4f8" 
-                  stroke-width="1" 
-                  fill="none"
-                  opacity="0.15"/>
-            <path d="M0 45 Q 200 25, 400 45 T 800 45 T 1200 45" 
-                  stroke="#6ba3e8" 
-                  stroke-width="1.5" 
-                  fill="none"
-                  opacity="0.2"/>
-            <path d="M0 50 Q 200 35, 400 50 T 800 50 T 1200 50" 
-                  stroke="#4a9fd8" 
-                  stroke-width="1.5" 
-                  fill="none"
-                  opacity="0.25"/>
-            <path d="M0 55 Q 200 40, 400 55 T 800 55 T 1200 55" 
-                  stroke="#3a8fc8" 
-                  stroke-width="1.5" 
-                  fill="none"
-                  opacity="0.3"/>
-            <path d="M0 50 Q 200 32, 400 50 T 800 50 T 1200 50" 
-                  stroke="#2a7fb8" 
-                  stroke-width="2" 
-                  fill="none"
-                  opacity="0.35"/>
-            <path d="M0 52 Q 200 38, 400 52 T 800 52 T 1200 52" 
-                  stroke="#1e5a8e" 
-                  stroke-width="1" 
-                  fill="none"
-                  opacity="0.2"/>
+            <path d="M0 50 Q 200 30, 400 50 T 800 50 T 1200 50" stroke="#8ab4f8" stroke-width="1" fill="none" opacity="0.15"/>
+            <path d="M0 45 Q 200 25, 400 45 T 800 45 T 1200 45" stroke="#6ba3e8" stroke-width="1.5" fill="none" opacity="0.2"/>
+            <path d="M0 50 Q 200 35, 400 50 T 800 50 T 1200 50" stroke="#4a9fd8" stroke-width="1.5" fill="none" opacity="0.25"/>
+            <path d="M0 55 Q 200 40, 400 55 T 800 55 T 1200 55" stroke="#3a8fc8" stroke-width="1.5" fill="none" opacity="0.3"/>
+            <path d="M0 50 Q 200 32, 400 50 T 800 50 T 1200 50" stroke="#2a7fb8" stroke-width="2" fill="none" opacity="0.35"/>
+            <path d="M0 52 Q 200 38, 400 52 T 800 52 T 1200 52" stroke="#1e5a8e" stroke-width="1" fill="none" opacity="0.2"/>
         </svg>
     </div>
-    
-    <!-- Doctor Profile Section -->
+
+    <!-- Doctor Profile -->
     <div class="doctor-profile">
         <div class="profile-container">
             <div class="doctor-image-container">
@@ -988,29 +236,11 @@
                 <div class="doctor-name">Dr. Armin Golian</div>
                 <div class="doctor-title">Doctor of Audiology</div>
             </div>
-            
             <div class="doctor-bio">
                 <h2>Meet Dr. Armin Golian</h2>
-                
-                <p>
-                    Dr. Armin Golian brings a passion for helping people reconnect with the sounds that matter most. 
-                    With years of experience in audiology and a deep commitment to patient care, Dr. Golian has built 
-                    a practice focused on personalized treatment and cutting-edge technology.
-                </p>
-                
-                <p>
-                    What sets Dr. Golian apart is his ability to really listen. He takes the time to understand each 
-                    patient's unique challenges and lifestyle needs, creating treatment plans that actually work in the 
-                    real world. Whether you're dealing with hearing loss, tinnitus, or just want to protect your hearing, 
-                    Dr. Golian is here to guide you every step of the way.
-                </p>
-                
-                <p>
-                    His approach combines clinical expertise with genuine care. Patients appreciate his straightforward 
-                    explanations, patience in answering questions, and commitment to finding solutions that fit both 
-                    their hearing needs and their budget.
-                </p>
-                
+                <p>Dr. Armin Golian brings a passion for helping people reconnect with the sounds that matter most. With years of experience in audiology and a deep commitment to patient care, Dr. Golian has built a practice focused on personalized treatment and cutting-edge technology.</p>
+                <p>What sets Dr. Golian apart is his ability to really listen. He takes the time to understand each patient's unique challenges and lifestyle needs, creating treatment plans that actually work in the real world. Whether you're dealing with hearing loss, tinnitus, or just want to protect your hearing, Dr. Golian is here to guide you every step of the way.</p>
+                <p>His approach combines clinical expertise with genuine care. Patients appreciate his straightforward explanations, patience in answering questions, and commitment to finding solutions that fit both their hearing needs and their budget.</p>
                 <div class="credentials">
                     <h3>Education & Credentials</h3>
                     <div class="credential-item">
@@ -1022,159 +252,89 @@
                         <span class="credential-school">California State University, Northridge</span>
                     </div>
                 </div>
-                
-                <p>
-                    Beyond his clinical work, Dr. Golian stays current with the latest advances in hearing technology 
-                    and treatment methods. He believes that education is just as important as treatment—empowering 
-                    patients to make informed decisions about their hearing health.
-                </p>
-                
-                <p>
-                    When he's not in the office, Dr. Golian enjoys spending time with family and staying active in 
-                    the West Los Angeles community. He's proud to serve the area and help people rediscover the joy 
-                    of clear, effortless hearing.
-                </p>
+                <p>Beyond his clinical work, Dr. Golian stays current with the latest advances in hearing technology and treatment methods. He believes that education is just as important as treatment — empowering patients to make informed decisions about their hearing health.</p>
+                <p>When he's not in the office, Dr. Golian enjoys spending time with family and staying active in the West Los Angeles community. He's proud to serve the area and help people rediscover the joy of clear, effortless hearing.</p>
             </div>
         </div>
     </div>
-    
-    <!-- Wave Decoration 2 -->
+
+    <!-- Wave 2 -->
     <div class="wave-decoration">
         <svg viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0 50 Q 200 30, 400 50 T 800 50 T 1200 50" 
-                  stroke="#8ab4f8" 
-                  stroke-width="1" 
-                  fill="none"
-                  opacity="0.15"/>
-            <path d="M0 45 Q 200 25, 400 45 T 800 45 T 1200 45" 
-                  stroke="#6ba3e8" 
-                  stroke-width="1.5" 
-                  fill="none"
-                  opacity="0.2"/>
-            <path d="M0 50 Q 200 35, 400 50 T 800 50 T 1200 50" 
-                  stroke="#4a9fd8" 
-                  stroke-width="1.5" 
-                  fill="none"
-                  opacity="0.25"/>
-            <path d="M0 55 Q 200 40, 400 55 T 800 55 T 1200 55" 
-                  stroke="#3a8fc8" 
-                  stroke-width="1.5" 
-                  fill="none"
-                  opacity="0.3"/>
-            <path d="M0 50 Q 200 32, 400 50 T 800 50 T 1200 50" 
-                  stroke="#2a7fb8" 
-                  stroke-width="2" 
-                  fill="none"
-                  opacity="0.35"/>
-            <path d="M0 52 Q 200 38, 400 52 T 800 52 T 1200 52" 
-                  stroke="#1e5a8e" 
-                  stroke-width="1" 
-                  fill="none"
-                  opacity="0.2"/>
+            <path d="M0 50 Q 200 30, 400 50 T 800 50 T 1200 50" stroke="#8ab4f8" stroke-width="1" fill="none" opacity="0.15"/>
+            <path d="M0 45 Q 200 25, 400 45 T 800 45 T 1200 45" stroke="#6ba3e8" stroke-width="1.5" fill="none" opacity="0.2"/>
+            <path d="M0 50 Q 200 35, 400 50 T 800 50 T 1200 50" stroke="#4a9fd8" stroke-width="1.5" fill="none" opacity="0.25"/>
+            <path d="M0 55 Q 200 40, 400 55 T 800 55 T 1200 55" stroke="#3a8fc8" stroke-width="1.5" fill="none" opacity="0.3"/>
+            <path d="M0 50 Q 200 32, 400 50 T 800 50 T 1200 50" stroke="#2a7fb8" stroke-width="2" fill="none" opacity="0.35"/>
+            <path d="M0 52 Q 200 38, 400 52 T 800 52 T 1200 52" stroke="#1e5a8e" stroke-width="1" fill="none" opacity="0.2"/>
         </svg>
     </div>
-    
-    <!-- Mission Section -->
+
+    <!-- Mission -->
     <div class="mission-section">
         <h2 class="mission-title">Our Mission</h2>
-        <p class="mission-text">
-            At Golian Audiology, we believe everyone deserves to hear clearly and live fully. Our mission is to 
-            provide exceptional, personalized hearing care using the latest technology and a patient-first approach. 
-            We're not just treating hearing loss—we're helping people reconnect with their loved ones, enjoy their 
-            favorite activities, and engage with the world around them.
-        </p>
+        <p class="mission-text">At Golian Audiology, we believe everyone deserves to hear clearly and live fully. Our mission is to provide exceptional, personalized hearing care using the latest technology and a patient-first approach. We're not just treating hearing loss — we're helping people reconnect with their loved ones, enjoy their favorite activities, and engage with the world around them.</p>
     </div>
-    
-    <!-- Values Section -->
+
+    <!-- Values -->
     <div class="values-section">
         <h2 class="section-title">What We Stand For</h2>
         <div class="values-grid">
             <div class="value-item">
                 <div class="value-icon">1</div>
                 <h3 class="value-title">Personalized Care</h3>
-                <p class="value-text">
-                    No two patients are the same. We take the time to understand your unique needs and create 
-                    treatment plans that work for your lifestyle.
-                </p>
+                <p class="value-text">No two patients are the same. We take the time to understand your unique needs and create treatment plans that work for your lifestyle.</p>
             </div>
-            
             <div class="value-item">
                 <div class="value-icon">2</div>
                 <h3 class="value-title">Honest Guidance</h3>
-                <p class="value-text">
-                    We'll always give you straightforward advice and recommendations. No pressure, no sales tactics—
-                    just honest guidance to help you make the best decision.
-                </p>
+                <p class="value-text">We'll always give you straightforward advice and recommendations. No pressure, no sales tactics — just honest guidance to help you make the best decision.</p>
             </div>
-            
             <div class="value-item">
                 <div class="value-icon">3</div>
                 <h3 class="value-title">Ongoing Support</h3>
-                <p class="value-text">
-                    Our relationship doesn't end after your first visit. We're here for follow-ups, adjustments, 
-                    and support whenever you need it.
-                </p>
+                <p class="value-text">Our relationship doesn't end after your first visit. We're here for follow-ups, adjustments, and support whenever you need it.</p>
             </div>
         </div>
     </div>
-    
-    <!-- CTA Section -->
+
+    <!-- CTA -->
     <div class="cta-section">
         <h2 class="cta-title">Ready to Start Your Journey?</h2>
         <p class="cta-text">Schedule an appointment with Dr. Golian and take the first step toward better hearing.</p>
         <button class="cta-button-large" onclick="openModal()">Book An Appointment</button>
     </div>
-    
-    <!-- Contact & Location Section -->
+
+    <!-- Contact & Location -->
     <div id="contact-location" class="contact-location-section">
         <h2 class="section-title">Visit Our Office</h2>
         <div class="contact-grid">
             <div class="contact-info">
                 <h3 class="contact-title">West Los Angeles</h3>
-                
                 <div class="contact-item">
                     <div class="contact-label">Address</div>
-                    <div class="contact-text">
-                        1444 S Carmelina Ave Suite 133<br>
-                        Los Angeles, CA 90025
-                    </div>
+                    <div class="contact-text">1444 S Carmelina Ave Suite 133<br>Los Angeles, CA 90025</div>
                 </div>
-                
                 <div class="contact-item">
                     <div class="contact-label">Phone</div>
-                    <div class="contact-text">
-                        <a href="tel:3106661401" style="color: #1e5a8e; text-decoration: none;">(310) 666-1401</a>
-                    </div>
+                    <div class="contact-text"><a href="tel:3106661401" style="color: #1e5a8e; text-decoration: none;">(310) 666-1401</a></div>
                 </div>
-                
                 <div class="contact-item">
                     <div class="contact-label">Office Hours</div>
-                    <div class="contact-text">
-                        Monday - Friday: 10:00am – 5:00pm<br>
-                        Saturday: By Appointment<br>
-                        Sunday: Closed
-                    </div>
+                    <div class="contact-text">Monday - Friday: 10:00am – 5:00pm<br>Saturday: By Appointment<br>Sunday: Closed</div>
                 </div>
-                
                 <div class="contact-item">
-                    <button class="cta-button-large" onclick="openModal()" style="margin-top: 20px;">Schedule Appointment</button>
+                    <button class="cta-button-large" onclick="openModal()" style="margin-top: 10px;">Schedule Appointment</button>
                 </div>
             </div>
-            
             <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.7899438162816!2d-118.46621!3d34.03668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbf1e5c0d5a3%3A0x1234567890abcdef!2s1444%20S%20Carmelina%20Ave%20Suite%20133%2C%20Los%20Angeles%2C%20CA%2090025!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-                    width="100%" 
-                    height="100%" 
-                    style="border:0; border-radius: 8px;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.7899438162816!2d-118.46621!3d34.03668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbf1e5c0d5a3%3A0x1234567890abcdef!2s1444%20S%20Carmelina%20Ave%20Suite%20133%2C%20Los%20Angeles%2C%20CA%2090025!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                    width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         </div>
     </div>
-    
+
     <!-- Footer -->
     <div class="wire-footer">
         <div class="wire-footer-content">
@@ -1196,7 +356,6 @@
                 <a href="terms-of-service.html" class="wire-footer-link">Terms of Service</a>
             </div>
         </div>
-        
         <div class="wire-footer-bottom">
             <div class="wire-social-icons">
                 <div class="wire-social-icon"></div>
@@ -1206,22 +365,15 @@
             <div class="wire-copyright">© 2025 Golian Audiology. All rights reserved.</div>
         </div>
     </div>
-    
-    <!-- Contact Form Modal -->
+
+    <!-- Modal -->
     <div id="contactModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h2 class="form-title">Book An Appointment</h2>
             <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
-            
             <form id="appointmentForm" action="https://formspree.io/f/meelqadj" method="POST">
-                <!-- Formspree will handle submissions -->
-                
-                <!-- Honeypot field for spam protection (hidden from users) -->
-                <p style="display:none;">
-                    <label>Don't fill this out if you're human: <input name="_gotcha" /></label>
-                </p>
-                
+                <p style="display:none;"><label>Don't fill this out if you're human: <input name="_gotcha" /></label></p>
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label">First Name *</label>
@@ -1232,27 +384,24 @@
                         <input type="text" name="lastName" class="form-input" required>
                     </div>
                 </div>
-                
                 <div class="form-group">
                     <label class="form-label">Phone *</label>
                     <input type="tel" name="phone" class="form-input" required>
                 </div>
-                
                 <div class="form-group">
                     <label class="form-label">Message</label>
                     <textarea name="message" class="form-textarea" placeholder="Tell us about your hearing concerns or any questions you have..."></textarea>
                 </div>
-                
                 <button type="submit" class="form-submit">Submit Appointment Request</button>
             </form>
         </div>
     </div>
-    
-    <!-- Cookie Consent Banner -->
+
+    <!-- Cookie Banner -->
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-content">
             <div class="cookie-text">
-                We use cookies to enhance your experience on our website. By continuing to browse, you agree to our use of cookies. 
+                We use cookies to enhance your experience on our website. By continuing to browse, you agree to our use of cookies.
                 Learn more in our <a href="privacy-policy.html">Privacy Policy</a>.
             </div>
             <div class="cookie-buttons">
@@ -1261,98 +410,39 @@
             </div>
         </div>
     </div>
-    
+
     <script>
-        // Hamburger Menu Toggle
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             const hamburger = document.getElementById('hamburger');
             const overlay = document.getElementById('menuOverlay');
-            
             menu.classList.toggle('active');
             hamburger.classList.toggle('active');
             overlay.classList.toggle('active');
-            
-            if (menu.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
         }
-        
         function openModal() {
             document.getElementById('contactModal').style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
-        
         function closeModal() {
             document.getElementById('contactModal').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
-        
         window.onclick = function(event) {
-            const modal = document.getElementById('contactModal');
-            if (event.target == modal) {
-                closeModal();
-            }
+            if (event.target == document.getElementById('contactModal')) closeModal();
         }
-        
-        function handleSubmit(event) {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            const submitBtn = form.querySelector('.form-submit');
-            
-            // Show loading state
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            // Submit to Netlify
-            fetch('/', {
-                method: 'POST',
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Thank you! Your appointment request has been submitted. We will contact you within 24 hours.');
-                    closeModal();
-                    form.reset();
-                } else {
-                    throw new Error('Form submission failed');
-                }
-                submitBtn.textContent = 'Submit Appointment Request';
-                submitBtn.disabled = false;
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                alert('Oops! There was a problem. Please call us at (310) 666-1401.');
-                submitBtn.textContent = 'Submit Appointment Request';
-                submitBtn.disabled = false;
-            });
-            
-            return false;
-        }
-        
-        // Cookie Consent Functions
         function checkCookieConsent() {
-            const consent = localStorage.getItem('cookieConsent');
-            if (!consent) {
-                document.getElementById('cookieBanner').classList.add('show');
-            }
+            if (!localStorage.getItem('cookieConsent')) document.getElementById('cookieBanner').classList.add('show');
         }
-        
         function acceptCookies() {
             localStorage.setItem('cookieConsent', 'accepted');
             document.getElementById('cookieBanner').classList.remove('show');
         }
-        
         function declineCookies() {
             localStorage.setItem('cookieConsent', 'declined');
             document.getElementById('cookieBanner').classList.remove('show');
         }
-        
-        // Check cookie consent on page load
         window.addEventListener('load', checkCookieConsent);
     </script>
 </body>
