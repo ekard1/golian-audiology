@@ -78,8 +78,6 @@
         }
         .mobile-menu-overlay.active { display: block; }
         .menu-close { display: none; }
-
-        /* Call Now - hidden on desktop */
         .call-now-btn { display: none; }
 
         @media (min-width: 769px) {
@@ -88,82 +86,121 @@
 
         /* Hero */
         .wire-hero {
-            padding: 120px 60px 60px;
+            padding: 100px 60px 40px;
             background: white;
-            position: relative;
-            min-height: 450px;
             display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            gap: 80px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
-        .wire-hero-content { max-width: 550px; z-index: 2; }
-        .google-review { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; min-height: 30px; }
-        .wire-tagline { font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 300; }
+        .wire-hero-content { max-width: 700px; z-index: 2; }
+
+        /* Google Review Bar */
+        .google-review-bar {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 30px;
+            padding: 8px 18px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            transition: box-shadow 0.2s;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+        .google-review-bar:hover {
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+        .google-g {
+            font-size: 16px;
+            font-weight: 700;
+            /* Google G colors */
+            background: linear-gradient(135deg, #4285f4 25%, #ea4335 25%, #ea4335 50%, #fbbc05 50%, #fbbc05 75%, #34a853 75%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+        .google-label {
+            font-size: 13px;
+            color: #555;
+            font-weight: 500;
+        }
+        .google-rating {
+            font-size: 14px;
+            font-weight: 700;
+            color: #333;
+        }
+        .google-stars {
+            color: #fbbc05;
+            font-size: 15px;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+
+        .wire-tagline { font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-weight: 300; }
         .wire-title { font-size: 48px; color: #333; margin-bottom: 10px; font-weight: 400; line-height: 1.2; }
-        .wire-text { font-size: 15px; color: #666; line-height: 1.6; margin-bottom: 30px; }
-        .doctor-container { display: flex; flex-direction: column; align-items: center; text-align: center; }
-        .doctor-name { text-align: center; margin-bottom: 10px; font-size: 16px; color: #333; font-weight: 500; }
-        .doctor-image-container { display: flex; justify-content: center; }
+        .wire-text { font-size: 15px; color: #666; line-height: 1.6; margin-bottom: 15px; }
 
         /* Wave */
-        .wave-decoration { width: 100%; height: 100px; position: relative; margin: 40px 0; }
+        .wave-decoration { width: 100%; height: 70px; position: relative; margin: 20px 0; }
         .wave-decoration svg { width: 100%; height: 100%; filter: blur(0.5px); }
 
         /* About */
-        .wire-about { padding: 80px 60px; background: white; text-align: center; }
-        .wire-section-title { font-size: 32px; color: #333; margin-bottom: 30px; font-weight: 300; text-transform: uppercase; letter-spacing: 3px; }
+        .wire-about { padding: 40px 60px; background: white; text-align: center; }
+        .wire-section-title { font-size: 28px; color: #333; margin-bottom: 20px; font-weight: 300; text-transform: uppercase; letter-spacing: 3px; }
         .wire-section-text { max-width: 800px; margin: 0 auto; font-size: 15px; color: #666; line-height: 1.8; }
 
         /* Services */
-        .wire-section { padding: 80px 60px; background: white; position: relative; }
+        .wire-section { padding: 40px 60px; background: white; position: relative; }
         .wire-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #e0e0e0; }
-        .wire-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; margin-top: 50px; }
-        .wire-card { padding: 30px 20px; background: white; text-align: center; }
-        .wire-card-icon { width: 80px; height: 80px; background: #f5f5f5; border-radius: 50%; margin: 0 auto 25px; display: flex; align-items: center; justify-content: center; }
-        .wire-card-title { font-size: 18px; color: #333; margin-bottom: 15px; font-weight: 500; }
+        .wire-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 30px; }
+        .wire-card { padding: 25px 20px; background: white; text-align: center; }
+        .wire-card-icon { width: 70px; height: 70px; background: #f5f5f5; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; }
+        .wire-card-title { font-size: 18px; color: #333; margin-bottom: 12px; font-weight: 500; }
         .wire-card-text { font-size: 14px; color: #666; line-height: 1.6; }
 
         /* Testimonials */
-        .wire-testimonials { background: white; padding: 80px 60px; text-align: center; position: relative; }
+        .wire-testimonials { background: white; padding: 40px 60px; text-align: center; position: relative; }
         .wire-testimonials::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #e0e0e0; }
-        .wire-testimonial-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 40px; }
-        .wire-testimonial-card { background: #fafafa; padding: 35px 30px; border-radius: 8px; }
-        .wire-quote { font-size: 14px; color: #666; line-height: 1.7; font-style: italic; margin-bottom: 20px; }
+        .wire-testimonial-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 30px; }
+        .wire-testimonial-card { background: #fafafa; padding: 30px; border-radius: 8px; }
+        .wire-quote { font-size: 14px; color: #666; line-height: 1.7; font-style: italic; margin-bottom: 15px; }
         .wire-author { font-size: 13px; color: #333; font-weight: 600; }
 
         /* Contact */
-        .contact-location-section { padding: 80px 60px; background: #f9f9f9; }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; max-width: 1200px; margin: 0 auto; }
-        .contact-info { background: white; padding: 40px; border-radius: 8px; }
-        .contact-title { font-size: 28px; color: #333; margin-bottom: 30px; font-weight: 400; }
-        .contact-item { margin-bottom: 25px; }
-        .contact-label { font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
+        .contact-location-section { padding: 40px 60px; background: #f9f9f9; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .contact-info { background: white; padding: 35px; border-radius: 8px; }
+        .contact-title { font-size: 26px; color: #333; margin-bottom: 25px; font-weight: 400; }
+        .contact-item { margin-bottom: 20px; }
+        .contact-label { font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; font-weight: 600; }
         .contact-text { font-size: 16px; color: #666; line-height: 1.6; }
-        .map-container { width: 100%; height: 500px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .map-container { width: 100%; height: 420px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
         /* Reviews */
-        .review-section { padding: 80px 60px; background: white; text-align: center; }
-        .review-header { max-width: 700px; margin: 0 auto 40px; }
-        .review-title { font-size: 36px; color: #333; margin-bottom: 15px; font-weight: 300; }
+        .review-section { padding: 40px 60px; background: white; text-align: center; }
+        .review-header { max-width: 700px; margin: 0 auto 30px; }
+        .review-title { font-size: 32px; color: #333; margin-bottom: 12px; font-weight: 300; }
         .review-text { font-size: 16px; color: #666; line-height: 1.6; }
         .google-reviews-embed { max-width: 900px; margin: 0 auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
         .review-button {
             display: inline-block; padding: 14px 35px; background: #4285f4; color: white;
-            border: 2px solid #4285f4; font-weight: 600; border-radius: 30px; cursor: pointer;
-            text-transform: uppercase; font-size: 12px; letter-spacing: 1px; text-decoration: none;
-            transition: all 0.3s; margin: 0 10px;
+            border: 2px solid #4285f4; font-weight: 600; border-radius: 30px;
+            text-transform: uppercase; font-size: 12px; letter-spacing: 1px;
+            text-decoration: none; transition: all 0.3s; margin: 0 10px;
         }
         .review-link-button {
             display: inline-block; padding: 14px 35px; background: white; color: #4285f4;
-            border: 2px solid #4285f4; font-weight: 600; border-radius: 30px; cursor: pointer;
-            text-transform: uppercase; font-size: 12px; letter-spacing: 1px; text-decoration: none;
-            transition: all 0.3s; margin: 0 10px;
+            border: 2px solid #4285f4; font-weight: 600; border-radius: 30px;
+            text-transform: uppercase; font-size: 12px; letter-spacing: 1px;
+            text-decoration: none; transition: all 0.3s; margin: 0 10px;
         }
 
         /* CTA */
-        .wire-cta-section { padding: 100px 60px; background: white; text-align: center; }
-        .wire-cta-title { font-size: 36px; color: #333; margin-bottom: 30px; font-weight: 300; }
+        .wire-cta-section { padding: 50px 60px; background: white; text-align: center; }
+        .wire-cta-title { font-size: 34px; color: #333; margin-bottom: 25px; font-weight: 300; }
         .wire-cta-button-large {
             padding: 16px 45px; background: white; color: #1e5a8e;
             border: 2px solid #1e5a8e; font-weight: 600; border-radius: 30px;
@@ -171,13 +208,13 @@
         }
 
         /* Footer */
-        .wire-footer { background: white; color: #666; padding: 60px 60px 30px; position: relative; }
+        .wire-footer { background: white; color: #666; padding: 40px 60px 25px; position: relative; }
         .wire-footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #e0e0e0; }
-        .wire-footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; margin-bottom: 40px; }
-        .wire-footer-title { font-size: 14px; color: #333; margin-bottom: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-        .wire-footer-link { font-size: 13px; color: #666; margin-bottom: 10px; }
-        .wire-footer-bottom { padding-top: 30px; text-align: center; }
-        .wire-social-icons { display: flex; gap: 15px; justify-content: center; margin-bottom: 20px; }
+        .wire-footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 30px; }
+        .wire-footer-title { font-size: 14px; color: #333; margin-bottom: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .wire-footer-link { font-size: 13px; color: #666; margin-bottom: 8px; display: block; text-decoration: none; }
+        .wire-footer-bottom { padding-top: 20px; text-align: center; }
+        .wire-social-icons { display: flex; gap: 15px; justify-content: center; margin-bottom: 15px; }
         .wire-social-icon { width: 35px; height: 35px; background: #f0f0f0; border-radius: 50%; }
         .wire-copyright { font-size: 12px; color: #999; }
 
@@ -216,71 +253,35 @@
         .form-submit { width: 100%; padding: 15px; background: #1e5a8e; color: white; border: none; border-radius: 6px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: background 0.3s; }
         .form-submit:hover { background: #164a73; }
 
-        /* Tablet */
-        @media (max-width: 1024px) and (min-width: 769px) {
-            .wire-hero { flex-direction: column; text-align: center; }
-            .wire-hero-content { max-width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; }
-        }
-
         /* ========================
            MOBILE
         ======================== */
         @media (max-width: 768px) {
-
-            /* Nav */
             .wire-nav { padding: 12px 20px; justify-content: center; }
             .wire-nav img { height: 80px !important; max-height: 80px; }
             .hamburger { display: flex; position: absolute; right: 20px; }
             .wire-menu .wire-cta-button { display: block; }
             .nav-cta-button { display: none; }
-            .menu-close {
-                display: block; position: absolute; top: 20px; right: 20px;
-                font-size: 32px; color: #666; cursor: pointer;
-                background: none; border: none; line-height: 1; padding: 5px;
-            }
-            .wire-menu {
-                position: fixed; top: 0; right: -100%; left: auto; transform: none;
-                width: 280px; height: 100vh; background: white;
-                flex-direction: column; padding: 80px 30px 30px; gap: 30px;
-                box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-                transition: right 0.3s ease; z-index: 1000; align-items: flex-start;
-            }
+            .menu-close { display: block; position: absolute; top: 20px; right: 20px; font-size: 32px; color: #666; cursor: pointer; background: none; border: none; line-height: 1; padding: 5px; }
+            .wire-menu { position: fixed; top: 0; right: -100%; left: auto; transform: none; width: 280px; height: 100vh; background: white; flex-direction: column; padding: 80px 30px 30px; gap: 30px; box-shadow: -2px 0 10px rgba(0,0,0,0.1); transition: right 0.3s ease; z-index: 1000; align-items: flex-start; }
             .wire-menu.active { right: 0; }
             .wire-menu-item { font-size: 18px; width: 100%; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
             .wire-cta-button { margin-top: 20px; padding: 12px 30px; font-size: 14px; width: 100%; text-align: center; }
 
-            /* Hide doctor photo */
-            .doctor-container { display: none; }
-
-            /* Hero - tighter */
-            .wire-hero { padding: 100px 20px 25px; flex-direction: column; gap: 0; min-height: unset; }
-            .wire-hero-content { max-width: 100%; text-align: left; display: flex; flex-direction: column; align-items: flex-start; }
+            .wire-hero { padding: 100px 20px 25px; text-align: left; align-items: flex-start; }
+            .wire-hero-content { max-width: 100%; }
+            .google-review-bar { margin-bottom: 15px; }
             .wire-title { font-size: 26px; }
             .wire-text { font-size: 14px; margin-bottom: 12px; }
 
-            /* Call Now button */
             .call-now-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 10px;
-                width: 100%;
-                padding: 15px;
-                background: #1e5a8e;
-                color: white;
-                border: none;
-                border-radius: 30px;
-                font-size: 16px;
-                font-weight: 600;
-                text-decoration: none;
-                margin-top: 10px;
-                letter-spacing: 0.5px;
+                display: flex; align-items: center; justify-content: center; gap: 10px;
+                width: 100%; padding: 15px; background: #1e5a8e; color: white;
+                border: none; border-radius: 30px; font-size: 16px; font-weight: 600;
+                text-decoration: none; margin-top: 10px; letter-spacing: 0.5px;
             }
 
-            /* Tighter waves */
             .wave-decoration { height: 50px; margin: 10px 0; }
-
-            /* Tighter sections */
             .wire-about { padding: 25px 20px; }
             .wire-section-title { font-size: 20px; letter-spacing: 1px; margin-bottom: 12px; }
             .wire-section-text { font-size: 14px; }
@@ -333,7 +334,16 @@
     <!-- Hero Section -->
     <div class="wire-hero">
         <div class="wire-hero-content">
-            <div class="google-review"></div>
+
+            <!-- Google Review Bar -->
+            <a href="https://www.google.com/search?q=golian+audiology#lrd=0x80c2bbca9d14188b:0x74ff8ff9d6aa2315,1"
+               target="_blank" rel="noopener noreferrer" class="google-review-bar">
+                <span class="google-g">G</span>
+                <span class="google-label">Google Reviews</span>
+                <span class="google-rating">4.9</span>
+                <span class="google-stars">★★★★★</span>
+            </a>
+
             <div class="wire-tagline">Golian Audiology</div>
             <div class="wire-title">Trusted Audiologist with 15+ Years Experience</div>
             <div class="wire-text">
@@ -342,18 +352,10 @@
             <div class="wire-text">
                 With more than 15 years of experience specializing in hearing aids and rehabilitative care, Dr. Armin Golian provides compassionate, personalized solutions using today's most advanced technology. Our goal is simple: help you hear clearly, communicate confidently, and live fully again.
             </div>
-            <button class="wire-cta-button hero-cta-button" onclick="openModal()" style="margin-top: 25px;">Book An Appointment</button>
-            <!-- Call Now - mobile only -->
+            <button class="wire-cta-button hero-cta-button" onclick="openModal()" style="margin-top: 20px;">Book An Appointment</button>
             <a href="tel:+13106661401" class="call-now-btn">
                 <i class="fas fa-phone"></i> Call Now: (310) 666-1401
             </a>
-        </div>
-        <!-- Doctor photo - desktop only -->
-        <div class="doctor-container">
-            <div class="doctor-name">Dr. Armin Golian Aud</div>
-            <div class="doctor-image-container">
-                <img src="images/dr-golian.png" alt="Dr. Armin Golian" style="width: 100%; max-width: 350px; height: auto; border-radius: 8px; margin-top: 15px;">
-            </div>
         </div>
     </div>
 
@@ -384,17 +386,17 @@
         </div>
         <div class="wire-cards">
             <div class="wire-card">
-                <div class="wire-card-icon"><i class="fas fa-stethoscope" style="font-size: 48px; color: #4285f4;"></i></div>
+                <div class="wire-card-icon"><i class="fas fa-stethoscope" style="font-size: 40px; color: #4285f4;"></i></div>
                 <div class="wire-card-title">Hearing Evaluations</div>
                 <div class="wire-card-text">We'll run a complete hearing evaluation to figure out exactly what's going on with your hearing. Using advanced testing, we'll identify any hearing loss and create a treatment plan that actually works for your lifestyle.</div>
             </div>
             <div class="wire-card">
-                <div class="wire-card-icon"><i class="fas fa-bell" style="font-size: 48px; color: #4285f4;"></i></div>
+                <div class="wire-card-icon"><i class="fas fa-bell" style="font-size: 40px; color: #4285f4;"></i></div>
                 <div class="wire-card-title">Tinnitus Management</div>
                 <div class="wire-card-text">Dealing with ringing or buzzing in your ears? You're not alone. We offer proven treatments that can significantly reduce tinnitus symptoms and help you find relief so you can focus on what matters.</div>
             </div>
             <div class="wire-card">
-                <div class="wire-card-icon"><i class="fas fa-ear-listen" style="font-size: 48px; color: #4285f4;"></i></div>
+                <div class="wire-card-icon"><i class="fas fa-ear-listen" style="font-size: 40px; color: #4285f4;"></i></div>
                 <div class="wire-card-title">Hearing Aids</div>
                 <div class="wire-card-text">Finding the right hearing aids is a big deal, and we make sure they're perfectly fitted to your needs. From the initial fitting to ongoing adjustments, we'll make sure you're comfortable and hearing clearly.</div>
             </div>
@@ -465,17 +467,17 @@
             <p class="review-text">See our reviews on Google</p>
         </div>
         <div class="google-reviews-embed">
-            <div style="text-align: center; padding: 40px 20px; background: #f9f9f9; border-radius: 8px;">
-                <div style="margin-bottom: 20px;"><span style="font-size: 48px; color: #fbbc04;">★★★★★</span></div>
-                <p style="font-size: 18px; color: #333; margin-bottom: 10px;">Rated 5.0 Stars on Google</p>
-                <p style="font-size: 14px; color: #666; margin-bottom: 25px;">Based on patient reviews</p>
+            <div style="text-align: center; padding: 35px 20px; background: #f9f9f9; border-radius: 8px;">
+                <div style="margin-bottom: 15px;"><span style="font-size: 44px; color: #fbbc04;">★★★★★</span></div>
+                <p style="font-size: 18px; color: #333; margin-bottom: 8px;">Rated 4.9 Stars on Google</p>
+                <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Based on patient reviews</p>
                 <a href="https://www.google.com/search?q=golian+audiology#lrd=0x80c2bbca9d14188b:0x74ff8ff9d6aa2315,1" target="_blank"
                    style="display: inline-block; padding: 12px 30px; background: #4285f4; color: white; text-decoration: none; border-radius: 4px; font-weight: 500;">
                     Read Our Google Reviews
                 </a>
             </div>
         </div>
-        <div style="margin-top: 30px;">
+        <div style="margin-top: 25px;">
             <a href="https://www.google.com/search?q=golian+audiology&sourceid=chrome&ie=UTF-8#lrd=0x80c2bbca9d14188b:0x74ff8ff9d6aa2315,1,,,,"
                target="_blank" rel="noopener noreferrer" class="review-link-button">View All Reviews on Google</a>
             <a href="https://www.google.com/search?q=golian+audiology&sourceid=chrome&ie=UTF-8#lrd=0x80c2bbca9d14188b:0x74ff8ff9d6aa2315,3,,,,"
